@@ -1,0 +1,25 @@
+form.form.mod-log-reg(name="regForm"
+  ng-submit="regCtrl.submit(regForm.$valid)"
+  on-body-click on-body-click-cb="regCtrl.clearError()"
+  ng-hide="regCtrl.isSuccessSubmitted" novalidate)
+
+  h2.form-title Registration
+
+  label.input-holder(ng-class="{'is-error' : regCtrl.isSubmitted && !regForm.email.$valid || regCtrl.error.length > 0}")
+    input.form-input(type="text" ng-model="regCtrl.user.email" name="email" ng-required="true" ng-change="regCtrl.clearError()" ng-pattern="/^[_a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,4})$/" placeholder="Email" autocomplete="off")
+    span.error-msg(ng-show="regCtrl.hasError(regForm.email, 'pattern')") Invalid e-mail
+    span.error-msg(ng-show="regCtrl.error.length > 0") {{ regCtrl.error }}
+
+  label.input-holder(ng-class="{'is-error' : regCtrl.isSubmitted && !regForm.password.$valid}")
+    input.form-input(type="password" ng-model="regCtrl.user.password" name="password" ng-change="regCtrl.clearError()"
+      ng-minlength="6" ng-maxlength="20" ng-required="true" placeholder="Password" autocomplete="off")
+    span.error-msg(ng-show="regCtrl.hasError(regForm.password, 'minlength')") Password must be at least 6 characters
+    span.error-msg(ng-show="regCtrl.hasError(regForm.password, 'maxlength')") Password must be not more than 20 characters
+
+  label.input-holder(ng-class="{'is-error' : regCtrl.isSubmitted && !regCtrl.isMatchPassword() }")
+    input.form-input(type="password" ng-model="regCtrl.user.repeatPassword" ng-change="regCtrl.clearError()"
+      name="repeatPassword" placeholder="Repeat password" autocomplete="off")
+    span.error-msg(ng-show="regCtrl.isSubmitted && !regCtrl.isMatchPassword()") Password repeat is not match password
+
+  div.btn-box.align-right
+    button.form-btn.btn.mod-red Registration

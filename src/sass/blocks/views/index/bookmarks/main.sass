@@ -1,0 +1,39 @@
+.index-bookmarks
+  max-width: 475px
+  padding-top: 106px
+  width: 100%
+  margin: 0 auto
+
+  .bookmarks-list
+    padding: 0
+    margin: 0 -20px
+    list-style-type: none
+
+    .list-item
+      position: relative
+      z-index: 1
+      float: left
+      width: $w100 / 5
+      padding: 0 10px
+      margin-bottom: 35px
+      text-align: center
+      box-sizing: border-box
+      color: $t-gray
+      line-height: 1
+      cursor: pointer
+
+      &:hover
+        color: $t-blue
+
+        .item-settings
+          display: block
+
+      &.is-settings
+        z-index: 2
+
+        .bookmarks-settings-popup
+          display: block
+
+      .item-title
+        font-size: em(13)
+        +roboto-light

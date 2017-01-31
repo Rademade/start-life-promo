@@ -1,0 +1,53 @@
+.index-bookmarks .bookmarks-list .list-item
+  .item-settings
+    display: none
+    position: absolute
+    top: -5px
+    cursor: pointer
+    right: -20px
+    +svg-sprite(tabs_edit)
+
+    &:hover
+      +svg-sprite(tabs_edit_hov)
+
+  &:nth-child(4n),
+  &:nth-child(5n)
+    .bookmarks-settings-popup
+      left: auto
+      right: 0
+      padding: 20px 105px 20px 20px
+
+  .bookmarks-settings-popup
+    position: absolute
+    display: none
+    top: -20px
+    left: 0
+    padding: 20px 20px 20px 105px
+    width: 375px
+    background-color: white
+    border: 1px solid $b-light-gray
+    box-sizing: border-box
+
+    .selector-wrapper
+
+      &.is-current
+
+        .selector-label
+          display: none
+
+    .form-selector
+
+      .select-item
+        padding: 5px 5px 5px 15px
+
+
+    .select-list-box
+      max-height: 180px
+
+    .popup-social-btn
+      cursor: pointer
+      height: 35px
+      line-height: 33px
+
+    .popup-btn
+      min-width: 105px

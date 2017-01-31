@@ -1,0 +1,20 @@
+=keyframes($name)
+  @-webkit-keyframes #{$name}
+    @content
+  @-moz-keyframes #{$name}
+    @content
+  @-ms-keyframes #{$name}
+    @content
+  @keyframes #{$name}
+    @content
+
++keyframes(fadeIn)
+  from
+    transform: translateY(20px)
+    opacity: 0
+
+
++keyframes(fadeTopIn)
+  from
+    transform: translateY(-80px)
+    opacity: 0

@@ -1,0 +1,31 @@
+nav.content-nav(news-sites ng-if="$state.includes('public.news')")
+nav.content-nav(nav-search ng-if="$state.includes('public.multi-search')")
+
+div(news-categories)
+
+div.content-data.mod-tabs(ng-class="{ 'mod-news' : newsCategoriesCtrl.newsService.isSubCategories() }")
+
+  //has class .is-views which show all rows of subrubrics
+  div.tabs(ng-if="newsCategoriesCtrl.newsService.isSubCategories()"
+  ng-class="{ 'is-views' : newsCategoriesCtrl.showAllSubCategories }")
+    div.tabs-data
+      ul.tabs-list(ng-sortable="newsCategoriesCtrl.config")
+        li.list-item(ng-repeat="subCategory in newsCategoriesCtrl.newsService.getSubCategories()"
+        ng-class="{ 'is-active' : subCategory.active }"  data-sub-category-item="")
+          span.item-text(ng-click="newsCategoriesCtrl.newsService.setCurrentSubCategory(subCategory); newsCategoriesCtrl.newsService.setSubCategory(subCategory); newsCategoriesCtrl.turnOffSubCategoriesArrow()"
+          ng-dblclick="newsCategoriesCtrl.open(subCategory.link)") {{ subCategory.name }}
+
+      div.tabs-settings
+        //has class .is-active which rotate icon on 180deg
+        i.settings-item.mod-views(ng-class="{ 'is-active' : newsCategoriesCtrl.subCategoriesArrowUp }"
+        ng-click = "newsCategoriesCtrl.allSubCategories()"
+        ng-hide = "!newsCategoriesCtrl.isSubArrowVisible()")
+
+  div.data-holder
+
+    div.loader-box(ng-show="applicationCtrl.isRequestPending()")
+      div.loader
+        svg(xmlns="http://www.w3.org/2000/svg" version="1.1" height="50" width="50" viewbox="0 0 50 50")
+          circle(cx="25" cy="25" r="20" stroke-width="5")
+
+    ul.news-preview(news-preview service="applicationCtrl.newsService")

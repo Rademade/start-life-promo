@@ -1,0 +1,63 @@
+//nav.content-nav(nav-profile)
+div.content-data.mod-log-reg
+  div.data-holder
+    div.data-box
+      div.holder-box
+        div.box-content(login)
+      i.holder-sep
+      div.holder-box
+        div.box-content(registration)
+
+div.popup-wrapper(ng-if="$state.current.url == '/popups/password-recovery'")
+  div.popup-holder
+    div.popup(on-body-click on-body-click-cb="$state.go('index.log-reg')" condition="true" click-preventer)
+      form.form.mod-popup(name="recoveryForm" novalidate ng-submit="logRegCtrl.resetEmail($event, recoveryForm.$valid)")
+        h2.form-title password recovery
+        label.input-holder(ng-class="{ 'is-error' : logRegCtrl.isEmailError(recoveryForm) || logRegCtrl.error.length > 0}")
+          input.form-input(type="email" ng-model="logRegCtrl.confirmationEmail" name="confirmationEmail" autocomplete="off"
+            ng-pattern="/^[_a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,4})$/" ng-required="true"
+            ng-change="logRegCtrl.clearError()" placeholder="Email")
+          span.error-msg(ng-show="logRegCtrl.hasError(recoveryForm.confirmationEmail, 'pattern')") Invalid e-mail
+          span.error-msg(ng-show="logRegCtrl.error.length > 0") {{ logRegCtrl.error }}
+        div.form-btn-list
+          div.btn-box
+            span.btn-link(ng-click="$state.go('index.log-reg')")
+              span Cancel
+          div.btn-box.align-right
+            button.form-btn.btn.mod-red Send Reset Instructions
+
+div.popup-wrapper(ng-if="$state.current.url == '/popups/check-email'")
+  div.popup-holder
+    div.popup.mod-notification(on-body-click on-body-click-cb="$state.go('index.log-reg')" condition="true" click-preventer)
+      p.popup-title Registration
+      p.popup-description
+        | To finish/continue registration, go to your e-mail.
+
+      div.form-btn-list
+        div.btn-box
+          button.form-btn.btn.mod-red(ng-click="$state.go('index.log-reg')") Continue
+
+div.popup-wrapper(ng-if="$state.current.url == '/popups/check-email-recovery'")
+  div.popup-holder
+    div.popup.mod-notification(on-body-click on-body-click-cb="$state.go('index.log-reg')" condition="true" click-preventer)
+      p.popup-title Password Recovery
+      p.popup-description
+        | Check the e-mail box to activate
+        br
+        | your profile.
+
+
+      div.form-btn-list
+        div.btn-box
+          button.form-btn.btn.mod-red(ng-click="$state.go('index.log-reg')") Continue
+
+div.popup-wrapper(ng-if="$state.current.url == '/popups/after-profile-delete'")
+  div.popup-holder
+    div.popup.mod-notification(on-body-click on-body-click-cb="$state.go('index.log-reg')" condition="true" click-preventer)
+      p.popup-title remove account
+      p.popup-description
+        | The account has been removed.
+
+      div.form-btn-list
+        div.btn-box
+          button.form-btn.btn.mod-red(ng-click="$state.go('index.log-reg')") Continue

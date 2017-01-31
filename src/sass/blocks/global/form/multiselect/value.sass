@@ -1,0 +1,27 @@
+.form-multiselect
+  .multiselect-value
+    cursor: pointer
+    position: relative
+    width: 100%
+    padding: 5px 30px 5px 10px
+    color: $t-silver
+    font-size: em(13)
+    line-height: 1.5
+    background-color: $white
+    border: 1px solid $b-light-gray
+    box-sizing: border-box
+    transition: border .3s ease
+    +roboto-regular
+
+    &:after
+      content: ''
+      position: absolute
+      top: 50%
+      right: 8px
+      transform: translateY(-50%)
+      transition: transform .3s ease
+      +svg-sprite(selector-arrow)
+
+    .value
+      display: inline-block
+      padding-right: 5px

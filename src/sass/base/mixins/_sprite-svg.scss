@@ -1,0 +1,634 @@
+%svg-common {
+	background: url("images/sprite.svg") no-repeat;
+}
+
+.svg-btn-add {
+	@extend %svg-common;
+	background-position: 66.31016042780749% 77.85483870967742%;
+}
+
+.svg-btn-add-dims {
+	width: 10px;
+	height: 10px;
+}
+
+.svg-btn-delete {
+	@extend %svg-common;
+	background-position: 71.29935085665637% 77.46335722691772%;
+}
+
+.svg-btn-delete-dims {
+	width: 9.06px;
+	height: 9.06px;
+}
+
+.svg-btn_plus {
+	@extend %svg-common;
+	background-position: 98.4972972972973% 82.06521739130434%;
+}
+
+.svg-btn_plus-dims {
+	width: 12px;
+	height: 12px;
+}
+
+.svg-checkbox-checked {
+	@extend %svg-common;
+	background-position: 27.624309392265193% 99.33888888888889%;
+}
+
+.svg-checkbox-checked-dims {
+	width: 16px;
+	height: 16px;
+}
+
+.svg-checkbox-default {
+	@extend %svg-common;
+	background-position: 54.14364640883978% 99.33888888888889%;
+}
+
+.svg-checkbox-default-dims {
+	width: 16px;
+	height: 16px;
+}
+
+.svg-form-datepicker {
+	@extend %svg-common;
+	background-position: 0 90.28813559322033%;
+}
+
+.svg-form-datepicker-dims {
+	width: 18px;
+	height: 19px;
+}
+
+.svg-form-delete-btn {
+	@extend %svg-common;
+	background-position: 99.03260869565217% 68.85245901639344%;
+}
+
+.svg-form-delete-btn-dims {
+	width: 13px;
+	height: 13px;
+}
+
+.svg-form-left-arrow {
+	@extend %svg-common;
+	background-position: 79.06315789473685% 50.22162162162162%;
+}
+
+.svg-form-left-arrow-dims {
+	width: 7px;
+	height: 11px;
+}
+
+.svg-form-right-arrow {
+	@extend %svg-common;
+	background-position: 45.78947368421053% 78.27567567567567%;
+}
+
+.svg-form-right-arrow-dims {
+	width: 7px;
+	height: 11px;
+}
+
+.svg-form_social_delete {
+	@extend %svg-common;
+	background-position: 62.67826274848747% 52.13990875515968%;
+}
+
+.svg-form_social_delete-dims {
+	width: 11.88px;
+	height: 11.88px;
+}
+
+.svg-form_social_plus {
+	@extend %svg-common;
+	background-position: 99.57377049180327% 53.84615384615385%;
+}
+
+.svg-form_social_plus-dims {
+	width: 14px;
+	height: 14px;
+}
+
+.svg-header_home {
+	@extend %svg-common;
+	background-position: 78.21818181818182% 18.766284917893717%;
+}
+
+.svg-header_home-dims {
+	width: 32px;
+	height: 30.97px;
+}
+
+.svg-header_home_act {
+	@extend %svg-common;
+	background-position: 78.21818181818182% 0;
+}
+
+.svg-header_home_act-dims {
+	width: 32px;
+	height: 30.97px;
+}
+
+.svg-header_home_hov {
+	@extend %svg-common;
+	background-position: 78.21818181818182% 37.532569835787434%;
+}
+
+.svg-header_home_hov-dims {
+	width: 32px;
+	height: 30.97px;
+}
+
+.svg-header_news {
+	@extend %svg-common;
+	background-position: 18.674698795180724% 68.98139732169908%;
+}
+
+.svg-header_news-dims {
+	width: 31px;
+	height: 30.97px;
+}
+
+.svg-header_news_act {
+	@extend %svg-common;
+	background-position: 37.34939759036145% 68.98139732169908%;
+}
+
+.svg-header_news_act-dims {
+	width: 31px;
+	height: 30.97px;
+}
+
+.svg-header_news_hov {
+	@extend %svg-common;
+	background-position: 0 68.98139732169908%;
+}
+
+.svg-header_news_hov-dims {
+	width: 31px;
+	height: 30.97px;
+}
+
+.svg-header_search {
+	@extend %svg-common;
+	background-position: 58.81675456143541% 39.02439024390244%;
+}
+
+.svg-header_search-dims {
+	width: 32.03px;
+	height: 32px;
+}
+
+.svg-header_search_act {
+	@extend %svg-common;
+	background-position: 58.81675456143541% 19.51219512195122%;
+}
+
+.svg-header_search_act-dims {
+	width: 32.03px;
+	height: 32px;
+}
+
+.svg-header_search_hov {
+	@extend %svg-common;
+	background-position: 58.81675456143541% 0;
+}
+
+.svg-header_search_hov-dims {
+	width: 32.03px;
+	height: 32px;
+}
+
+.svg-index_search {
+	@extend %svg-common;
+	background-position: 65.71428571428571% 65.42528735632185%;
+}
+
+.svg-index_search-dims {
+	width: 22px;
+	height: 22px;
+}
+
+.svg-index_search_act {
+	@extend %svg-common;
+	background-position: 78.28571428571429% 65.42528735632185%;
+}
+
+.svg-index_search_act-dims {
+	width: 22px;
+	height: 22px;
+}
+
+.svg-index_search_hov {
+	@extend %svg-common;
+	background-position: 53.142857142857146% 65.42528735632185%;
+}
+
+.svg-index_search_hov-dims {
+	width: 22px;
+	height: 22px;
+}
+
+.svg-nav-add {
+	@extend %svg-common;
+	background-position: 98.4972972972973% 75.54347826086956%;
+}
+
+.svg-nav-add-dims {
+	width: 12px;
+	height: 12px;
+}
+
+.svg-nav-add-blue {
+	@extend %svg-common;
+	background-position: 98.4972972972973% 88.58695652173913%;
+}
+
+.svg-nav-add-blue-dims {
+	width: 12px;
+	height: 12px;
+}
+
+.svg-nav-cars {
+	@extend %svg-common;
+	background-position: 0 80.00552486187846%;
+}
+
+.svg-nav-cars-dims {
+	width: 19px;
+	height: 15px;
+}
+
+.svg-nav-cars-cur {
+	@extend %svg-common;
+	background-position: 54.51123595505618% 53.03867403314917%;
+}
+
+.svg-nav-cars-cur-dims {
+	width: 19px;
+	height: 15px;
+}
+
+.svg-nav-contacts {
+	@extend %svg-common;
+	background-position: 99.57377049180327% 36.666666666666664%;
+}
+
+.svg-nav-contacts-dims {
+	width: 14px;
+	height: 16px;
+}
+
+.svg-nav-contacts-cur {
+	@extend %svg-common;
+	background-position: 99.57377049180327% 45.55555555555556%;
+}
+
+.svg-nav-contacts-cur-dims {
+	width: 14px;
+	height: 16px;
+}
+
+.svg-nav-dating {
+	@extend %svg-common;
+	background-position: 90.99435028248588% 55.146067415730336%;
+}
+
+.svg-nav-dating-dims {
+	width: 20px;
+	height: 18px;
+}
+
+.svg-nav-dating-cur {
+	@extend %svg-common;
+	background-position: 90.99435028248588% 65.25842696629213%;
+}
+
+.svg-nav-dating-cur-dims {
+	width: 20px;
+	height: 18px;
+}
+
+.svg-nav-delete {
+	@extend %svg-common;
+	background-position: 76.09574468085107% 77.43850267379679%;
+}
+
+.svg-nav-delete-dims {
+	width: 9px;
+	height: 9px;
+}
+
+.svg-nav-homes {
+	@extend %svg-common;
+	background-position: 73.39626933575978% 52.687989111942834%;
+}
+
+.svg-nav-homes-dims {
+	width: 21.16px;
+	height: 19.66px;
+}
+
+.svg-nav-homes-cur {
+	@extend %svg-common;
+	background-position: 91.59463148316651% 0;
+}
+
+.svg-nav-homes-cur-dims {
+	width: 21.16px;
+	height: 19.66px;
+}
+
+.svg-nav-jobs {
+	@extend %svg-common;
+	background-position: 10.05586592178771% 88.53739612188366%;
+}
+
+.svg-nav-jobs-dims {
+	width: 18px;
+	height: 15.5px;
+}
+
+.svg-nav-jobs-cur {
+	@extend %svg-common;
+	background-position: 20.11173184357542% 88.53739612188366%;
+}
+
+.svg-nav-jobs-cur-dims {
+	width: 18px;
+	height: 15.5px;
+}
+
+.svg-nav-news {
+	@extend %svg-common;
+	background-position: 99.57377049180327% 9.497206703910615%;
+}
+
+.svg-nav-news-dims {
+	width: 14px;
+	height: 17px;
+}
+
+.svg-nav-news-cur {
+	@extend %svg-common;
+	background-position: 99.57377049180327% 0;
+}
+
+.svg-nav-news-cur-dims {
+	width: 14px;
+	height: 17px;
+}
+
+.svg-nav-partners {
+	@extend %svg-common;
+	background-position: 10.555555555555555% 79.56593406593407%;
+}
+
+.svg-nav-partners-dims {
+	width: 17px;
+	height: 14px;
+}
+
+.svg-nav-partners-cur {
+	@extend %svg-common;
+	background-position: 20% 79.56593406593407%;
+}
+
+.svg-nav-partners-cur-dims {
+	width: 17px;
+	height: 14px;
+}
+
+.svg-nav-profile {
+	@extend %svg-common;
+	background-position: 99.57377049180327% 18.88888888888889%;
+}
+
+.svg-nav-profile-dims {
+	width: 14px;
+	height: 16px;
+}
+
+.svg-nav-profile-cur {
+	@extend %svg-common;
+	background-position: 99.57377049180327% 27.77777777777778%;
+}
+
+.svg-nav-profile-cur-dims {
+	width: 14px;
+	height: 16px;
+}
+
+.svg-nav-shopping {
+	@extend %svg-common;
+	background-position: 91.51136363636364% 11.107344632768362%;
+}
+
+.svg-nav-shopping-dims {
+	width: 21px;
+	height: 19px;
+}
+
+.svg-nav-shopping-cur {
+	@extend %svg-common;
+	background-position: 91.51136363636364% 21.841807909604515%;
+}
+
+.svg-nav-shopping-cur-dims {
+	width: 21px;
+	height: 19px;
+}
+
+.svg-nav-travel {
+	@extend %svg-common;
+	background-position: 30% 88.29281767955801%;
+}
+
+.svg-nav-travel-dims {
+	width: 17px;
+	height: 15px;
+}
+
+.svg-nav-travel-cur {
+	@extend %svg-common;
+	background-position: 39.44444444444444% 88.29281767955801%;
+}
+
+.svg-nav-travel-cur-dims {
+	width: 17px;
+	height: 15px;
+}
+
+.svg-play {
+	@extend %svg-common;
+	background-position: 0 0;
+}
+
+.svg-play-dims {
+	width: 97.03px;
+	height: 113.84px;
+}
+
+.svg-popup_close {
+	@extend %svg-common;
+	background-position: 9.444444444444445% 99.89385474860335%;
+}
+
+.svg-popup_close-dims {
+	width: 17px;
+	height: 17px;
+}
+
+.svg-radio-checked {
+	@extend %svg-common;
+	background-position: 99.57377049180327% 61.53846153846154%;
+}
+
+.svg-radio-checked-dims {
+	width: 14px;
+	height: 14px;
+}
+
+.svg-radio-default {
+	@extend %svg-common;
+	background-position: 48.35164835164835% 88.29281767955801%;
+}
+
+.svg-radio-default-dims {
+	width: 15px;
+	height: 15px;
+}
+
+.svg-scale-minus {
+	@extend %svg-common;
+	background-position: 89.97765363128492% 70.24083769633508%;
+}
+
+.svg-scale-minus-dims {
+	width: 18px;
+	height: 5px;
+}
+
+.svg-scale-plus {
+	@extend %svg-common;
+	background-position: 0 99.89385474860335%;
+}
+
+.svg-scale-plus-dims {
+	width: 17px;
+	height: 17px;
+}
+
+.svg-selector-arrow {
+	@extend %svg-common;
+	background-position: 50% 71.87301587301587%;
+}
+
+.svg-selector-arrow-dims {
+	width: 11px;
+	height: 7px;
+}
+
+.svg-tabs_add {
+	@extend %svg-common;
+	background-position: 60.962566844919785% 77.85483870967742%;
+}
+
+.svg-tabs_add-dims {
+	width: 10px;
+	height: 10px;
+}
+
+.svg-tabs_edit {
+	@extend %svg-common;
+	background-position: 18.784530386740332% 99.33888888888889%;
+}
+
+.svg-tabs_edit-dims {
+	width: 16px;
+	height: 16px;
+}
+
+.svg-tabs_edit_act {
+	@extend %svg-common;
+	background-position: 45.30386740331492% 99.33888888888889%;
+}
+
+.svg-tabs_edit_act-dims {
+	width: 16px;
+	height: 16px;
+}
+
+.svg-tabs_edit_hov {
+	@extend %svg-common;
+	background-position: 36.46408839779006% 99.33888888888889%;
+}
+
+.svg-tabs_edit_hov-dims {
+	width: 16px;
+	height: 16px;
+}
+
+.svg-tabs_remove {
+	@extend %svg-common;
+	background-position: 50.26737967914438% 77.85483870967742%;
+}
+
+.svg-tabs_remove-dims {
+	width: 10px;
+	height: 10px;
+}
+
+.svg-tabs_remove_hov {
+	@extend %svg-common;
+	background-position: 55.61497326203209% 77.85483870967742%;
+}
+
+.svg-tabs_remove_hov-dims {
+	width: 10px;
+	height: 10px;
+}
+
+.svg-tabs_search {
+	@extend %svg-common;
+	background-position: 90.72269475581592% 32.80796586059744%;
+}
+
+.svg-tabs_search-dims {
+	width: 19.47px;
+	height: 20.25px;
+}
+
+.svg-tabs_search_act {
+	@extend %svg-common;
+	background-position: 90.72269475581592% 44.33001422475107%;
+}
+
+.svg-tabs_search_act-dims {
+	width: 19.47px;
+	height: 20.25px;
+}
+
+.svg-tabs_views {
+	@extend %svg-common;
+	background-position: 38.888888888888886% 78.27567567567567%;
+}
+
+.svg-tabs_views-dims {
+	width: 17px;
+	height: 11px;
+}
+
+.svg-tabs_views_act {
+	@extend %svg-common;
+	background-position: 29.444444444444443% 78.27567567567567%;
+}
+
+.svg-tabs_views_act-dims {
+	width: 17px;
+	height: 11px;
+}
+

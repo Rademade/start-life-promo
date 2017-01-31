@@ -1,0 +1,38 @@
+.popup-wrapper
+  &.mod-msearch
+    position: absolute
+    width: calc(100% - 220px)
+    margin-left: 220px
+    background: rgba(120, 136, 145, .5)
+    .popup
+      width: 100%
+      max-width: 500px
+      padding: 50px 105px
+      background-color: white
+      border: 1px solid #d8dbdd
+      text-align: center
+      box-shadow: 0 3px 0 rgba(0, 0, 0, 0.15)
+      box-sizing: border-box
+
+    .popup-img
+      display: inline-block
+      max-width: 100%
+      margin-bottom: 24px
+      text-align: center
+
+    .popup-title
+      display: block
+      margin-top: 0
+      margin-bottom: 7px
+      font-size: em(24)
+      line-height: 35px
+      color: $t-blue
+      +roboto-regular
+
+    .popup-description
+      display: block
+      color: #666
+      font-size: em(13)
+      font-weight: 400
+      line-height: 21px
+      +roboto-regular

@@ -1,0 +1,29 @@
+.promo-play
+  position: absolute
+  top: 50%
+  left: 50%
+  text-align: center
+  line-height: 112px
+  color: $t-blue
+  cursor: pointer
+  font-size: em(20)
+  transform: translateY(-50%) translateX(-50%)
+  +roboto-light
+  &:hover
+    &:after
+      opacity: .8
+
+  &:after
+    position: absolute
+    z-index: 1
+    content: ""
+    top: 50%
+    left: 50%
+    margin-left: 10px
+    transform: translateY(-50%) translateX(-50%)
+    transition: opacity 0.5s ease
+    +svg-sprite(play)
+
+  .play-text
+    position: relative
+    z-index: 2

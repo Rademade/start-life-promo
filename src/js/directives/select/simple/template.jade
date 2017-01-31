@@ -1,0 +1,23 @@
+div.selector-wrapper(
+  on-body-click=""
+  on-body-click-cb="simpleSelectCtrl.selector.close()"
+  click-preventer=""
+  ng-click="simpleSelectCtrl.selector.toggle()"
+  condition="true"
+  ng-class="{ 'is-current' : simpleSelectCtrl.selector.isOpen }")
+
+  div.input-selector
+    span.selector-label(ng-if="simpleSelectCtrl.placeholder") {{ simpleSelectCtrl.getPlaceholderLabel() }}
+    span.selector-value(ng-if="!simpleSelectCtrl.hideValue") {{ simpleSelectCtrl.getPlaceholderValue() }}
+  span.error-msg(ng-if="!simpleSelectCtrl.isFilterMode") {{ errorMessage }}
+
+  i.selector-arrow
+  div.select-list(ng-if="selector.values.length && (openByDefault || simpleSelectCtrl.selector.isOpen)")
+    div.select-list-box
+      div.select-item(
+        click-preventer="all"
+        ng-click="simpleSelectCtrl.select(value)"
+        ng-repeat="value in selector.values"
+        ng-class="{'is-current' : value == selector.selected}")
+        span.select-item-text() {{ value.name }}
+

@@ -1,0 +1,52 @@
+.tabs
+  &.is-settings
+    height: auto
+
+    .tabs-list
+      .list-item
+        margin: 0 6px 10px 0
+        padding: 0 32px 0 6px
+        color: $t-gray
+        background-color: $white
+        border: 1px solid $b-light-gray
+
+        &.mod-add
+          display: block
+          padding: 0
+          background: none
+          border: 1px solid $b-dark-silver
+
+          .item-add
+            display: none
+            padding: 0 12px 0 23px
+            color: $white
+            background-color: $bg-silver
+            &:hover
+              color: $white
+
+        .item-remove
+          display: block
+
+        &.mod-add
+          &.is-active-input
+            border: 0
+            .form-selector
+              display: block
+            .item-add
+              display: none
+
+          .item-add
+            display: block
+
+        &.is-active
+          &:after
+            display: none
+
+        &:hover
+          color: $t-silver
+
+    .tabs-settings
+      .settings-item
+        &.mod-edit
+          &:after
+            +svg-sprite(tabs_edit_act)

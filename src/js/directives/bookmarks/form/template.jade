@@ -1,0 +1,31 @@
+.bookmarks-settings-popup(on-body-click
+  on-body-click-cb="bookmarkFormCtrl.cancelEditing()"
+  click-preventer novalidate condition="false")
+
+  div.form-selector.mod-placeholder.mod-h35(simple-select
+    ng-if="bookmarkFormCtrl.selector" placeholder="Category: "
+    selector="bookmarkFormCtrl.selector"
+    on-selected-cb="bookmarkFormCtrl.onCategoryChangeCb()")
+
+  div.input-holder.mod-h35(ng-class="{'is-error': bookmarkFormCtrl.isFieldError(bookmarkFormCtrl.editingBookmark.link)}")
+    label.form-input
+      span.input-label Link:
+      input.input-value(ng-model="bookmarkFormCtrl.editingBookmark.link"
+        type="text" name="link" ng-change="bookmarkFormCtrl.onLinkChangeCb()")
+
+  div.input-holder.mod-h35(ng-class="{'is-error': bookmarkFormCtrl.isFieldError(bookmarkFormCtrl.editingBookmark.name)}")
+    label.form-input
+      span.input-label Name:
+      input.input-value(ng-model="bookmarkFormCtrl.editingBookmark.name"
+        type="text" name="name" ng-change="bookmarkFormCtrl.onNameChangeCb()")
+
+  label.input-holder(ng-if="bookmarkFormCtrl.showLogin(bookmarkFormCtrl.editingBookmark)")
+    btn.popup-social-btn.btn.mod-blue.mod-full() Show messages Gmail
+  //ng-click="bookmarkFormCtrl.authenticate('google_oauth2')"
+
+  div.form-btn-list
+    .btn-box.align-left
+      button.btn-link
+        span.link-text(ng-click="bookmarkFormCtrl.cancelEditing()") Cancel
+    .btn-box.align-right
+      button.popup-btn.btn.mod-red(ng-click="bookmarkFormCtrl.saveBookmark()") Save

@@ -1,0 +1,48 @@
+.input-radio-item
+  position: relative
+  float: left
+  min-height: 20px
+  margin-bottom: 15px
+  cursor: pointer
+
+  .form-radio
+    position: absolute
+    top: 4px
+    left: 0
+    opacity: 0
+
+  .form-radio-label
+    position: relative
+    display: inline-block
+    padding: 0 30px 0 20px
+    color: $t-gray
+    font-size: em(13)
+    line-height: 22px
+    word-break: break-word
+    cursor: pointer
+    +user-select
+    +roboto-regular
+
+    &:after,
+    &:before
+      content: ""
+      position: absolute
+      top: 50%
+      left: 0
+      transition: opacity 0.3s ease
+      transform: translateY(-50%)
+
+    &:after
+      opacity: 1
+      +svg-sprite(radio-default)
+
+    &:before
+      opacity: 0
+      +svg-sprite(radio-checked)
+
+  .form-radio //checked
+    &:checked + .form-radio-label
+      &:after
+        opacity: 0
+      &:before
+        opacity: 1

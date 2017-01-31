@@ -1,0 +1,35 @@
+.content .content-data .data-holder
+
+  .data-box
+    display: table
+    width: 100%
+    min-height: 300px
+    table-layout: fixed
+
+  .holder-sep
+    display: table-cell
+    width: 20px
+    +media-below($media-large-desktop)
+      display: none
+
+  .holder-box
+    display: table-cell
+    width: 58.5%
+    height: 100%
+    padding: 35px 60px
+    background: $bg-white
+    border: 1px solid $b-gray
+    box-sizing: border-box
+    +media-below(1250)
+      padding: 35px
+
+    +media-below($media-large-desktop)
+      display: block
+      width: 100%
+      margin-bottom: 20px
+
+    .box-content
+      margin: 0 auto
+      max-width: 330px
+      width: 100%
+      min-height: 100%

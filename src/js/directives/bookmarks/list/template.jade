@@ -1,0 +1,11 @@
+ul.bookmarks-list(ng-sortable="bookmarksCtrl.config" ng-if="bookmarksCtrl.bookmarks.length > 0")
+  li.list-item(ng-repeat="bookmark in bookmarksCtrl.bookmarks | limitTo : 10"
+    ng-class="bookmarksCtrl.getCssClasses(bookmark)")
+
+    span.item-img(ng-click="bookmarksCtrl.openLink(bookmark.link)")
+      span.item-notification(ng-show="bookmark.notifications") {{ bookmark.notifications }}
+      i.item-settings(ng-click="bookmarksCtrl.editBookmark(bookmark)" click-preventer)
+    span.item-title(ng-click="bookmarksCtrl.openLink(bookmark.link)") {{ bookmark.name | bookmarkName }}
+
+    form(bookmark-form bookmark="bookmark" service="bookmarksCtrl.service"
+      ng-if="bookmarksCtrl.isEditing(bookmark)" on-save-cb="bookmarksCtrl.loadBookmarks()")

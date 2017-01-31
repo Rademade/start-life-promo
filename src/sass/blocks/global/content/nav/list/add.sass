@@ -1,0 +1,52 @@
+.content-nav .nav-list
+
+  .list-item.mod-add
+    padding: 6px 0
+    margin-left: 8px
+
+    &.is-large
+      position: absolute
+      z-index: 10
+      top: 10px
+      left: 20px
+      width: 180px
+      margin-left: 0
+
+      .form-selector
+
+        .select-list
+          max-height: calc(100vh - 145px)
+          height: calc(100vh - 145px)
+
+        .select-list-box
+          max-height: 100%
+
+
+    .item-link
+      position: relative
+      padding-left: 25px
+
+      &:after
+        content: ''
+        position: absolute
+        top: 50%
+        left: 0
+        transform: translateY(-50%)
+        transition: opacity .3s ease
+        +svg-sprite(nav-add-blue)
+
+
+    //&:hover
+    //  .item-link
+    //    &:after
+    //      opacity: .8
+
+    .form-selector
+      display: none
+
+    &.is-selected
+      .form-selector
+        display: block
+
+      .item-link
+        display: none

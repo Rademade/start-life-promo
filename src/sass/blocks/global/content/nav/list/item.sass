@@ -1,0 +1,51 @@
+.content-nav  .nav-list
+  .list-item
+    cursor: pointer
+    position: relative
+    box-sizing: border-box
+
+    &.is-current
+      cursor: default
+      .item-link
+        cursor: default
+        color: $t-blue
+      .item-ico
+        border: 1px solid $b-blue
+        &:after,
+        &:before
+          transform: translate(-50%, -50%) scale(.9)
+        &:after
+          opacity: 0
+        &:before
+          opacity: 1
+
+      .item-link
+
+        &:hover
+
+          color: $t-blue
+
+
+      &:hover
+
+        .item-link
+          color: $t-blue
+
+        .item-delete
+          opacity: 0
+          visibility: hidden
+
+
+    &.as-sortable-item
+      float: none
+
+      .item-link
+        padding-left: 0
+
+
+    &:hover
+
+      .item-delete
+        opacity: 1
+        visibility: visible
+        cursor: pointer

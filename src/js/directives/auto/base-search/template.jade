@@ -1,0 +1,43 @@
+div.inputs-list
+  div.inputs-list
+    //div.form-nav-btn.mod-add(ng-show="autoBaseSearchCtrl.factory.getAbleToAdd()")
+      span.btn-text(ng-click="autoBaseSearchCtrl.factory.addNewCar()") Add Another Car
+
+  div.inputs-list(ng-repeat="car in autoBaseSearchCtrl.factory.getCars()")
+    div.form-selector.mod-msearch(simple-select
+      selector="car.make"
+      on-selected-cb="autoBaseSearchCtrl.updateCarModel(car)"
+      placeholder="Make"
+      placeholder-dynamic="true")
+
+    div.form-selector.mod-msearch(simple-select
+      ng-disable="car.isModelDisabled"
+      ng-class="{'is-disabled' : car.isModelDisabled}"
+      selector="car.model"
+      placeholder="Model"
+      placeholder-dynamic="true")
+
+    div.form-nav-btn.mod-delete(ng-show="autoBaseSearchCtrl.factory.getAbleToRemove()")
+      span.btn-text(ng-click="autoBaseSearchCtrl.factory.removeCar(car)") Remove
+
+div.inputs-list
+  div.form-selector.mod-msearch(
+    custom-select = ""
+    selector="autoBaseSearchCtrl.factory.selectors.minPrice"
+    placeholder="Price (min)"
+    input-placeholder="'Enter your price'")
+
+  div.form-selector.mod-msearch(
+    custom-select = ""
+    selector="autoBaseSearchCtrl.factory.selectors.maxPrice"
+    ng-class="{'is-error' : autoBaseSearchCtrl.factory.isPriceErrorShowed()}"
+    placeholder="Price (max)"
+    input-placeholder="'Enter your price'"
+    error-message="'Max price must be more then min price'")
+
+div.inputs-list
+  div.input-holder.mod-msearch(
+    ng-class="{'is-error' : autoBaseSearchCtrl.factory.isZipCodeErrorShowed()}")
+    input.form-input(type="text"
+      ng-model="autoBaseSearchCtrl.factory.zipCode"
+      placeholder="ZIP code")

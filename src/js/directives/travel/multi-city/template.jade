@@ -1,0 +1,35 @@
+div.form-field
+  div.inputs-list(ng-repeat="flight in multiCityCtrl.flights track by $index" ng-if="multiCityCtrl.flights.length > 0")
+    label.input-holder.mod-msearch(direction
+      ng-class="{'is-error' : multiCityCtrl.isDirectionError(flight.directionFrom)}"
+      service="flight.directionFrom"
+      provider="airport"
+      on-selected-cb="multiCityCtrl.setCity($index+1+$index*1)"
+      placeholder="Flying from")
+
+    label.input-holder.mod-msearch(direction
+      ng-class="{'is-error' : multiCityCtrl.isDirectionError(flight.directionTo)}"
+      service="flight.directionTo"
+      provider="airport"
+      placeholder="Flying to"
+      on-selected-cb="multiCityCtrl.departDateON($index+1+$index*1, $index)")
+
+    div.input-holder.mod-msearch
+      div.form-datepicker(datepicker
+        ng-class="flight.dateTo.getClass(multiCityCtrl.isFormSubmitted)"
+        service="flight.dateTo"
+        on-toggle-cb="multiCityCtrl.service.closeAllAccept(flight.dateTo)"
+        placeholder="Depart")
+      i.form-delete-btn(ng-show="multiCityCtrl.flights.length > 1"
+        ng-click="multiCityCtrl.service.destroyFlight(flight)")
+
+  div.btn-box.mod-msearch(ng-show="multiCityCtrl.flights.length < 5")
+    button.form-btn.btn.mod-gray(ng-click="multiCityCtrl.addFlight()") Add another flight
+
+  div.inputs-list(flight-type
+    service="multiCityCtrl.factories.flight"
+    on-toggle-cb="multiCityCtrl.service.closeAllAccept(multiCityCtrl.factories.flight)"
+    sync="multiCityCtrl.sync"
+    show-classes="true")
+
+div.filter-list(flight-sites on-click-cb="multiCityCtrl.open(site)")

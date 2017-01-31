@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" width="16" height="13.5" viewBox="0 0 16 13.5">
+  <g>
+    <path d="M13.000,6.000 L13.000,7.000 L2.000,7.000 L2.000,6.000 L13.000,6.000 Z" fill="#bac0c3"/>
+    <rect x="0.5" y="2" width="15" height="11" rx="2" ry="2" stroke-linejoin="round" stroke="#bac0c3" stroke-width="1px" fill-opacity="0"/>
+    <rect x="9.5" width="1" height="3" fill="#bac0c3"/>
+    <path d="M9.000,0.000 L9.000,1.000 L6.000,1.000 L6.000,0.000 L9.000,0.000 Z" fill="#bac0c3"/>
+  </g>
+</svg>

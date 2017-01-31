@@ -1,0 +1,29 @@
+.tabs-settings .settings-item
+
+  .item-tooltip-holder
+    position: absolute
+    width: 75px
+    top: 100%
+    margin-top: 5px
+    left: 50%
+    transform: translateX(-50%)
+    text-align: center
+    transition: opacity .3s ease, visibility .3s ease
+
+    .item-tooltip
+      position: relative
+      display: inline-block
+      padding: 5px 12px
+      color: $white
+      background: $bg-black
+      font-size: em(11)
+      +arial
+
+      &:after
+        content: ''
+        position: absolute
+        bottom: 100%
+        left: 50%
+        transform: translateX(-50%)
+        border: 5px solid transparent
+        border-bottom-color: $bg-black

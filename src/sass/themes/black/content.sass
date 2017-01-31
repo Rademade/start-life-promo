@@ -1,0 +1,38 @@
+html.dark-theme
+  .content .content-holder
+    background: $bg-extra-dark
+  .content-nav
+    background: $bg-dark
+    border-right-color: $b-dark
+  .content-nav .nav-list .list-item
+
+    .item-link
+      color: $t-dark
+
+    .item-ico
+      &:after
+        opacity: .5
+
+    &.is-current
+      .item-link
+        color: $t-blue
+      &:hover
+        .item-link
+          color: $t-blue
+
+    &:hover
+      .item-link
+        color: $t-dark-silver
+
+      .item-delete
+        opacity: .5
+
+    &.is-current
+      .item-ico
+        &:after
+          opacity: 0
+
+    &.mod-add
+      .item-link
+        &:after
+          opacity: .5

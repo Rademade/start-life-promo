@@ -1,0 +1,10 @@
+mixin mail-main-img(src,width,height,description,marginTop,marginBottom)
+  tr
+    +spacer(marginTop)
+
+  tr
+    td(width="100%" style="width:100%;height:100%; text-align: center;" align="center")
+      img(src="#{src}" width="#{width}" height="#{height}" style="width: #{width}px; height: #{height}px;" alt="#{description}")
+
+  tr
+    +spacer(marginBottom)

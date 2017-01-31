@@ -1,0 +1,42 @@
+html(style="margin: 0; padding: 0;" )
+
+  include ../elements/head
+  include ../partials/mixins/spacer
+  include ../partials/mixins/img
+  include ../partials/mixins/text
+  include ../partials/mixins/title
+  include ../partials/mixins/btn
+
+  body(style="margin: 0; padding: 0;")
+    table(border="0" cellpadding="0" height="100%" cellspacing="0" bgcolor="#f6f8f9" align="center"
+    style="margin:0 auto; " +
+    "padding:0; " +
+    "width: 100%; " +
+    "font-family: Verdana, sans-serif;"
+    )
+      tr
+        td(align="center")
+          table.main-table(width="600"  border="0" cellpadding="0" cellspacing="0" bgcolor="#f6f8f9"
+          style="margin:0 auto; " +
+                "padding:0; " +
+                "width: 600px; " +
+                "max-width: 600px; " +
+                "font-family: Verdana, sans-serif;"
+                )
+            tr
+              +spacer(60)
+              td(style="width: 100%;")
+                table(border="0"
+                      cellpadding="0"
+                      cellspacing="0"
+                      width = "100%"
+                      bgcolor="#f6f8f9"
+                      style="margin:0; " +
+                            "padding:0;"
+                )
+                  include ../elements/header
+
+                  block content
+
+
+              +spacer(60)

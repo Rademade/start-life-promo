@@ -1,0 +1,37 @@
+nav.content-nav(nav-profile)
+div.content-data
+  div.data-holder
+    form.form(name="contactsForm" ng-submit="contactsCtrl.submit(contactsForm.$valid)" novalidate)
+      div.form-data
+        div.data-box(ng-show="!contactsCtrl.message")
+          h2.form-title questions and suggestions - contact us
+          label.input-holder(ng-class="{'is-error' : contactsCtrl.hasError(contactsForm.theme, 'required') }")
+            input.form-input(
+              type="text"
+              ng-model="contactsCtrl.letter.theme"
+              name="theme"
+              ng-required="true"
+              placeholder="Theme")
+
+          label.input-holder(ng-class="{'is-error' : contactsCtrl.hasError(contactsForm.text, 'required') }")
+            textarea.form-textarea(
+              ng-model="contactsCtrl.letter.text"
+              name="text"
+              ng-required="true"
+              placeholder="Text your message")
+
+          div.btn-box.align-right
+            button.form-btn.btn.mod-red Send
+
+        div(ng-show="contactsCtrl.message") {{ contactsCtrl.message }}
+
+div.popup-wrapper(ng-if="$state.current.url == 'contacts/popup'")
+  div.popup-holder
+    div.popup.mod-notification(on-body-click on-body-click-cb="$state.go('public.contacts')" condition="true" click-preventer)
+      p.popup-title Feedback
+      p.popup-description
+        | Thank you for your letter
+
+      div.form-btn-list
+        div.btn-box
+          button.form-btn.btn.mod-red(ng-click="$state.go('public.contacts')") Continue

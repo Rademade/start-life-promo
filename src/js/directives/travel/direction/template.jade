@@ -1,0 +1,19 @@
+div.form-input-group(on-body-click on-body-click-cb="directionCtrl.clearData()"
+   ng-class="{'is-active' : data}")
+  input.form-input(
+    placeholder="{{ directionCtrl.placeholder }}"
+    ng-model="searchStr"
+    ng-change="directionCtrl.inputChangeHandler(searchStr)"
+    ng-mouseover="directionCtrl.mouseover()"
+    ng-focus = "directionCtrl.setFocus()"
+    ng-blur = "directionCtrl.blurFocus()"
+    ng-selected = "directionCtrl.selected()"
+    ng-keyup="directionCtrl.keyPressed($event)")
+  .angucomplete-holder.angucomplete-dropdown(ng-show="data" ng-mouseover="directionCtrl.clearId()")
+    .angucomplete-searching(ng-show="(!data || data.length == 0)") No results
+    .angucomplete-row(ng-repeat="airport in data | limitTo : 10")
+      p.angucomplete-title(
+      ng-class="{ 'is-current' : airport.id.$oid == directionCtrl.currentId }"
+      ng-click="directionCtrl.onSelected(airport)"
+      ng-bind-html="directionCtrl.getHighlightedText(airport.text, highlightedPart) | to_trusted")
+  span.error-msg(ng-if="errorMessage") {{ errorMessage }}

@@ -1,0 +1,32 @@
+div.form-field
+  div.inputs-list
+    label.input-holder.mod-msearch(direction
+      ng-class="{'is-error' : oneWayCtrl.isDirectionError(oneWayCtrl.directionFrom)}"
+      service="oneWayCtrl.directionFrom"
+      on-selected-cb="oneWayCtrl.setCity()"
+      sync="oneWayCtrl.sync"
+      placeholder="Flying from")
+
+    label.input-holder.mod-msearch(direction
+      ng-class="{'is-error' : oneWayCtrl.isDirectionError(oneWayCtrl.directionTo)}"
+      service="oneWayCtrl.directionTo"
+      placeholder="Flying to"
+      on-selected-cb="oneWayCtrl.departDateON()")
+
+  div.inputs-list
+    div.input-holder.mod-msearch.mod-mb0
+      div.form-datepicker(datepicker
+        ng-class="oneWayCtrl.dateFrom.getClass(oneWayCtrl.isFormSubmitted)"
+        service="oneWayCtrl.dateFrom"
+        on-toggle-cb="oneWayCtrl.closeAllAccept(datepicker)"
+        placeholder="Depart")
+      div.form-selector.mod-msearch.mod-esmall(simple-select selector="oneWayCtrl.exactDatesFrom"
+        placeholder-dynamic="true" placeholder="Exact dates")
+
+  div.inputs-list(flight-type
+    service="oneWayCtrl.flightType"
+    on-toggle-cb="oneWayCtrl.closeAllAccept(flightType)"
+    sync="oneWayCtrl.sync"
+    show-classes="true")
+
+div.filter-list(flight-sites on-click-cb="oneWayCtrl.open(site)")

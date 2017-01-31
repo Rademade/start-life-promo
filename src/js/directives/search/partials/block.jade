@@ -1,0 +1,26 @@
+.angucomplete-holder(ng-class="{'angucomplete-dropdown-visible': showDropdown}")
+
+  input(ng-model='searchStr' ng-disabled='disableInput' type='text' placeholder='{{placeholder}}'
+    ng-focus='onFocusHandler()' class='{{inputClass}}' autocapitalize='on' autocorrect='off'
+    autocomplete='off' ng-change='inputChangeHandler(searchStr)' click-preventer="")
+
+  i.search-ico(ng-controller="searchController as searchCtrl" ng-click="searchCtrl.search(searchStr)")
+
+  .angucomplete-dropdown(ng-show='showDropdown' on-body-click on-body-click-cb="hideResults($event)" condition="true")
+    .angucomplete-searching(ng-controller="searchController as searchCtrl" ng-show='searching && !searchCtrl.showMakeSingleSearch()' ng-bind='textSearching')
+    .angucomplete-searching(ng-controller="searchController as searchCtrl" ng-show='!searching && !searchCtrl.showMakeSingleSearch()' ng-bind='textNoResults')
+    .angucomplete-searching.mod-small(ng-controller="searchController as searchCtrl" ng-show='searchCtrl.showMakeSingleSearch()') Make a single search at various websites at one time
+    .angucomplete-row(ng-controller="searchController as searchCtrl"
+      ng-show="!searchCtrl.showMakeSingleSearch()"
+      ng-repeat='result in results | limitTo : 10'
+      ng-click='selectResult(result); searchCtrl.search(result.title)'
+      ng-mouseenter='hoverRow($index)' ng-class="{'angucomplete-selected-row': $index == currentIndex}")
+
+      .angucomplete-title(ng-if='matchClass' ng-bind-html='result.title')
+      .angucomplete-title(ng-if='!matchClass') {{ result.title }}
+
+    .angucomplete-row(ng-controller="searchController as searchCtrl")
+      ul.search-social-list(ng-sortable="searchCtrl.config")
+        li.list-item(ng-repeat="icon in searchCtrl.tabService.getTabs()" ng-class="{ 'is-active' : icon.activeIcon }")
+          i.item-ico(data-label="{{ icon.name }}" ng-class="icon.class" ng-click="searchCtrl.toggleIcon(icon)"
+            ng-dblclick="searchCtrl.openIcon(icon)")

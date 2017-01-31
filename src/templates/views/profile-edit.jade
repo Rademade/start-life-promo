@@ -1,0 +1,129 @@
+nav.content-nav(nav-profile)
+div.content-data
+  div.data-holder
+    form.form.mod-profile(name="userForm" ng-submit="profileCtrl.save(userForm.$valid)" novalidate)
+      div.form-data
+        div.form-box
+          div.form-title-holder
+            h2.form-title profile data
+            div.btn-box
+              a.btn-link(ng-click="profileCtrl.logoutUser()")
+                span Log out
+
+          label.input-holder.mod-swith(ng-class="{ 'is-error' : !userForm.name.$valid }")
+            input.form-input(type="text" ng-model="profileCtrl.editingUser.name" name="name" ng-maxlength="30"
+              placeholder="Name & surname")
+
+            div.form-switch
+              div.switch-holder
+                span.switch-item(ng-repeat="sex in profileCtrl.sexes" ng-click="profileCtrl.setSex(sex.name)"
+                  ng-class="{ 'is-active' : sex.active }") {{ sex.name }}
+
+          div.input-list
+            label.input-holder.mod-medium
+              input.form-input(type="text" ng-model="profileCtrl.year" name="year" placeholder="Born year")
+            label.input-holder.mod-small
+              input.form-input(type="text" ng-model="profileCtrl.month" name="month" placeholder="Month")
+            label.input-holder.mod-small
+              input.form-input(type="text" ng-model="profileCtrl.day" name="day" placeholder="Day")
+
+          label.input-holder(ng-class="{ 'is-error' : !userForm.email.$valid && profileCtrl.isFormSubmitted}")
+            input.form-input(type="text" ng-model="profileCtrl.editingUser.email" name="email" ng-required="true" autocomplete="off"
+              ng-pattern="/^[_a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,4})$/" placeholder="Email")
+
+          label.input-holder(ng-class="{'is-error' : !userForm.password.$valid && profileCtrl.isFormSubmitted}")
+            input.form-input(type="password" ng-model="profileCtrl.editingUser.password" name="password" autocomplete="off"
+              ng-minlength="6" ng-maxlength="20" ng-required="true" placeholder="Password")
+
+          label.input-holder(ng-class="{ 'is-error' : profileCtrl.isPasswordRepeatError(userForm) }")
+            input.form-input(type="password" ng-model="profileCtrl.editingUser.repeatPassword" name="repeatPassword"
+              ng-required="true" placeholder="Repeat password" autocomplete="off")
+
+          div.form-btn-list
+            div.btn-box
+              button.btn.mod-gray.mod-full(ng-click="$state.go('public.profile.edit.delete-profile')") Delete profile
+            div.btn-box
+              button.btn.mod-red.mod-full Save
+
+        div.form-box
+          h2.form-title connect with
+          div.form-social-profile
+            a.profile-item(ng-repeat="account in profileCtrl.accounts" href="#" class="{{ account.class }}"
+              ng-click="profileCtrl.toggleAccount(account)"
+              ng-class="{ 'is-active' : profileCtrl.isConnected(account.key) }")
+              span.item-text() {{ account.name }}
+
+div.popup-wrapper(ng-if="$state.current.url == 'edit/popups/registration'")
+  div.popup-holder
+    div.popup.mod-notification(on-body-click on-body-click-cb="$state.go('public.profile.edit')" condition="true" click-preventer)
+      p.popup-title Registration
+      p.popup-description
+        | Welcome! Your Start account has been successfully created.
+
+      div.form-btn-list
+        div.btn-box
+          button.form-btn.btn.mod-red(ng-click="$state.go('public.profile.edit')") Continue
+
+div.popup-wrapper(ng-if="$state.current.url == 'edit/popups/change-password'")
+  div.popup-holder
+    div.popup(on-body-click condition="true" click-preventer)
+      p.popup-title Password Recovery
+      p.popup-description
+        | Enter new password.
+        br
+        | Good password contains a combination of letters and punctuation marks. It must include at lest 6 symbols.
+      form.form.mod-popup(name="recoveryForm" ng-submit="profileCtrl.submit(recoveryForm.$valid)" novalidate)
+        label.input-holder(ng-class="{'is-error' : profileCtrl.isRecFormSubmitted && !recoveryForm.recPassword.$valid}")
+          input.form-input(type="password" ng-model="profileCtrl.changeUserPass.password" name="recPassword"
+          ng-change="profileCtrl.clearError()" placeholder="Password" ng-minlength="6" ng-maxlength="20"
+          ng-required="true")
+          span.error-msg(ng-show="profileCtrl.hasError(recoveryForm.recPassword, 'minlength')") Password must be at least 6 characters
+          span.error-msg(ng-show="profileCtrl.hasError(recoveryForm.recPassword, 'maxlength')") Password must be not more than 20 characters
+        label.input-holder(ng-class="{'is-error' : profileCtrl.isRecFormSubmitted && !profileCtrl.isMatchRecPassword()}")
+          input.form-input(type="password" ng-model="profileCtrl.changeUserPass.repeatPassword" name="recRepeatPassword" ng-change="profileCtrl.clearError()" placeholder="Repeat password" ng-required="true")
+          span.error-msg(ng-show="profileCtrl.isSubmitted && !profileCtrl.isMatchRecPassword()") Password repeat is not match password
+
+        div.form-btn-list
+          div.btn-box
+            span.btn-link(ng-click="$state.go('public.profile.edit')")
+              span Cancel
+          div.btn-box.align-right
+            button.form-btn.btn.mod-red Save
+
+div.popup-wrapper(ng-if="$state.current.url == 'edit/popups/successfully-changed'")
+  div.popup-holder
+    div.popup.mod-notification(on-body-click on-body-click-cb="$state.go('public.profile.edit')" condition="true" click-preventer)
+      p.popup-title Password Recovery
+      p.popup-description
+        | The password has been
+        br
+        | successfully changed.
+
+      div.form-btn-list
+        div.btn-box
+          button.form-btn.btn.mod-red(ng-click="$state.go('public.profile.edit')") Continue
+
+div.popup-wrapper(ng-if="$state.current.url == 'edit/popups/delete-profile'")
+  div.popup-holder
+    div.popup.mod-notification(condition="true" click-preventer)
+      p.popup-title remove account
+      p.popup-description
+        | Are you sure you want to delete your account?
+
+      div.form-btn-list
+        div.btn-box
+          button.btn-link(ng-click="$state.go('public.profile.edit')")
+            span Cancel
+        div.btn-box.align-right
+          button.form-btn.btn.mod-red(ng-click="profileCtrl.sentDeleteConfirmation()") Continue
+
+div.popup-wrapper(ng-if="$state.current.url == 'edit/popups/delete-popup'")
+  div.popup-holder
+    div.popup.mod-notification(condition="true" click-preventer)
+      p.popup-title remove account
+      p.popup-description
+        | To confirm deletion of your account, go to your e-mail.
+
+      div.form-btn-list
+        div.btn-box
+          button.form-btn.btn.mod-red(ng-click="profileCtrl.logoutUser()") Continue

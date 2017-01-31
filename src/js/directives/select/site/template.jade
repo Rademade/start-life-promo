@@ -1,0 +1,21 @@
+div.selector-wrapper(on-body-click ng-click="siteSelectCtrl.toggle()"
+  on-body-click-cb="siteSelectCtrl.selector.close()"
+  condition="siteSelectCtrl.selector.isOpen"
+  ng-class="{'is-current' : siteSelectCtrl.selector.isOpen}")
+
+  input.input-selector(ng-model="siteSelectCtrl.query"
+    click-preventer="all" type="text"
+    placeholder="Enter news site"
+    ng-change="siteSelectCtrl.onChange()")
+
+  i.selector-arrow
+  div.select-list(ng-if="siteSelectCtrl.selector.values.length > 0")
+    div.select-list-box
+      div.select-item(click-preventer="all" ng-click="siteSelectCtrl.select(value)"
+        ng-repeat="value in siteSelectCtrl.getValues()"
+        ng-class="{ 'is-hover' : value.id == currentId }")
+
+        span.select-item-text() {{ value.name }}
+
+      div.select-item(ng-show="siteSelectCtrl.getValues().length == 0")
+        span.select-item-text Not found

@@ -1,0 +1,25 @@
+.form-selector
+
+  .select-item
+    padding: 5px 10px
+    border-bottom: none
+    color: $t-silver
+    font-size: em(13)
+    transition: color .3s ease
+    +roboto-regular
+
+    &:hover
+      color: $t-blue
+      background: $white
+
+    &.is-hover
+      color: $t-blue
+      background: $white
+
+    &.is-current
+      pointer-events: none
+      color: #666666
+
+    .highlight
+      color: $t-silver
+      +roboto-bold

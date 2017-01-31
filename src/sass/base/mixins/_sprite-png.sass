@@ -1,0 +1,666 @@
+/*
+  SASS variables are information about icon's compiled state, stored under its original file name
+
+  .icon-home
+    width: $icon-home-width
+
+  The large array-like variables contain all information about a single icon
+  $icon-home: x y offset_x offset_y width height total_width total_height image_path
+
+  At the bottom of this section, we provide information about the spritesheet itself
+  $spritesheet: width height image $spritesheet-sprites
+  */
+$amazon-name: 'amazon'
+$amazon-x: 441px
+$amazon-y: 110px
+$amazon-offset-x: -441px
+$amazon-offset-y: -110px
+$amazon-width: 19px
+$amazon-height: 16px
+$amazon-total-width: 504px
+$amazon-total-height: 387px
+$amazon-image: '../images/sprite-png.png'
+$amazon: (441px, 110px, -441px, -110px, 19px, 16px, 504px, 387px, '../images/sprite-png.png', 'amazon', )
+$basecamp-name: 'basecamp'
+$basecamp-x: 146px
+$basecamp-y: 0px
+$basecamp-offset-x: -146px
+$basecamp-offset-y: 0px
+$basecamp-width: 63px
+$basecamp-height: 48px
+$basecamp-total-width: 504px
+$basecamp-total-height: 387px
+$basecamp-image: '../images/sprite-png.png'
+$basecamp: (146px, 0px, -146px, 0px, 63px, 48px, 504px, 387px, '../images/sprite-png.png', 'basecamp', )
+$basecamp-dark-name: 'basecamp_dark'
+$basecamp-dark-x: 0px
+$basecamp-dark-y: 64px
+$basecamp-dark-offset-x: 0px
+$basecamp-dark-offset-y: -64px
+$basecamp-dark-width: 63px
+$basecamp-dark-height: 48px
+$basecamp-dark-total-width: 504px
+$basecamp-dark-total-height: 387px
+$basecamp-dark-image: '../images/sprite-png.png'
+$basecamp-dark: (0px, 64px, 0px, -64px, 63px, 48px, 504px, 387px, '../images/sprite-png.png', 'basecamp_dark', )
+$basecamp-hov-name: 'basecamp_hov'
+$basecamp-hov-x: 73px
+$basecamp-hov-y: 64px
+$basecamp-hov-offset-x: -73px
+$basecamp-hov-offset-y: -64px
+$basecamp-hov-width: 63px
+$basecamp-hov-height: 48px
+$basecamp-hov-total-width: 504px
+$basecamp-hov-total-height: 387px
+$basecamp-hov-image: '../images/sprite-png.png'
+$basecamp-hov: (73px, 64px, -73px, -64px, 63px, 48px, 504px, 387px, '../images/sprite-png.png', 'basecamp_hov', )
+$bing-maps-name: 'bing-maps'
+$bing-maps-x: 467px
+$bing-maps-y: 214px
+$bing-maps-offset-x: -467px
+$bing-maps-offset-y: -214px
+$bing-maps-width: 16px
+$bing-maps-height: 16px
+$bing-maps-total-width: 504px
+$bing-maps-total-height: 387px
+$bing-maps-image: '../images/sprite-png.png'
+$bing-maps: (467px, 214px, -467px, -214px, 16px, 16px, 504px, 387px, '../images/sprite-png.png', 'bing-maps', )
+$bing-name: 'bing'
+$bing-x: 441px
+$bing-y: 214px
+$bing-offset-x: -441px
+$bing-offset-y: -214px
+$bing-width: 16px
+$bing-height: 16px
+$bing-total-width: 504px
+$bing-total-height: 387px
+$bing-image: '../images/sprite-png.png'
+$bing: (441px, 214px, -441px, -214px, 16px, 16px, 504px, 387px, '../images/sprite-png.png', 'bing', )
+$craig-name: 'craig'
+$craig-x: 441px
+$craig-y: 136px
+$craig-offset-x: -441px
+$craig-offset-y: -136px
+$craig-width: 16px
+$craig-height: 16px
+$craig-total-width: 504px
+$craig-total-height: 387px
+$craig-image: '../images/sprite-png.png'
+$craig: (441px, 136px, -441px, -136px, 16px, 16px, 504px, 387px, '../images/sprite-png.png', 'craig', )
+$dropbox-name: 'dropbox'
+$dropbox-x: 0px
+$dropbox-y: 122px
+$dropbox-offset-x: 0px
+$dropbox-offset-y: -122px
+$dropbox-width: 64px
+$dropbox-height: 45px
+$dropbox-total-width: 504px
+$dropbox-total-height: 387px
+$dropbox-image: '../images/sprite-png.png'
+$dropbox: (0px, 122px, 0px, -122px, 64px, 45px, 504px, 387px, '../images/sprite-png.png', 'dropbox', )
+$dropbox-dark-name: 'dropbox_dark'
+$dropbox-dark-x: 74px
+$dropbox-dark-y: 122px
+$dropbox-dark-offset-x: -74px
+$dropbox-dark-offset-y: -122px
+$dropbox-dark-width: 64px
+$dropbox-dark-height: 45px
+$dropbox-dark-total-width: 504px
+$dropbox-dark-total-height: 387px
+$dropbox-dark-image: '../images/sprite-png.png'
+$dropbox-dark: (74px, 122px, -74px, -122px, 64px, 45px, 504px, 387px, '../images/sprite-png.png', 'dropbox_dark', )
+$dropbox-hov-name: 'dropbox_hov'
+$dropbox-hov-x: 219px
+$dropbox-hov-y: 0px
+$dropbox-hov-offset-x: -219px
+$dropbox-hov-offset-y: 0px
+$dropbox-hov-width: 64px
+$dropbox-hov-height: 45px
+$dropbox-hov-total-width: 504px
+$dropbox-hov-total-height: 387px
+$dropbox-hov-image: '../images/sprite-png.png'
+$dropbox-hov: (219px, 0px, -219px, 0px, 64px, 45px, 504px, 387px, '../images/sprite-png.png', 'dropbox_hov', )
+$ebay-name: 'ebay'
+$ebay-x: 441px
+$ebay-y: 188px
+$ebay-offset-x: -441px
+$ebay-offset-y: -188px
+$ebay-width: 16px
+$ebay-height: 16px
+$ebay-total-width: 504px
+$ebay-total-height: 387px
+$ebay-image: '../images/sprite-png.png'
+$ebay: (441px, 188px, -441px, -188px, 16px, 16px, 504px, 387px, '../images/sprite-png.png', 'ebay', )
+$espn-name: 'espn'
+$espn-x: 467px
+$espn-y: 162px
+$espn-offset-x: -467px
+$espn-offset-y: -162px
+$espn-width: 16px
+$espn-height: 16px
+$espn-total-width: 504px
+$espn-total-height: 387px
+$espn-image: '../images/sprite-png.png'
+$espn: (467px, 162px, -467px, -162px, 16px, 16px, 504px, 387px, '../images/sprite-png.png', 'espn', )
+$events-name: 'events'
+$events-x: 0px
+$events-y: 177px
+$events-offset-x: 0px
+$events-offset-y: -177px
+$events-width: 64px
+$events-height: 45px
+$events-total-width: 504px
+$events-total-height: 387px
+$events-image: '../images/sprite-png.png'
+$events: (0px, 177px, 0px, -177px, 64px, 45px, 504px, 387px, '../images/sprite-png.png', 'events', )
+$events-dark-name: 'events_dark'
+$events-dark-x: 74px
+$events-dark-y: 177px
+$events-dark-offset-x: -74px
+$events-dark-offset-y: -177px
+$events-dark-width: 64px
+$events-dark-height: 45px
+$events-dark-total-width: 504px
+$events-dark-total-height: 387px
+$events-dark-image: '../images/sprite-png.png'
+$events-dark: (74px, 177px, -74px, -177px, 64px, 45px, 504px, 387px, '../images/sprite-png.png', 'events_dark', )
+$events-hov-name: 'events_hov'
+$events-hov-x: 148px
+$events-hov-y: 177px
+$events-hov-offset-x: -148px
+$events-hov-offset-y: -177px
+$events-hov-width: 64px
+$events-hov-height: 45px
+$events-hov-total-width: 504px
+$events-hov-total-height: 387px
+$events-hov-image: '../images/sprite-png.png'
+$events-hov: (148px, 177px, -148px, -177px, 64px, 45px, 504px, 387px, '../images/sprite-png.png', 'events_hov', )
+$facebook-name: 'facebook'
+$facebook-x: 0px
+$facebook-y: 232px
+$facebook-offset-x: 0px
+$facebook-offset-y: -232px
+$facebook-width: 64px
+$facebook-height: 45px
+$facebook-total-width: 504px
+$facebook-total-height: 387px
+$facebook-image: '../images/sprite-png.png'
+$facebook: (0px, 232px, 0px, -232px, 64px, 45px, 504px, 387px, '../images/sprite-png.png', 'facebook', )
+$facebook-dark-name: 'facebook_dark'
+$facebook-dark-x: 74px
+$facebook-dark-y: 232px
+$facebook-dark-offset-x: -74px
+$facebook-dark-offset-y: -232px
+$facebook-dark-width: 64px
+$facebook-dark-height: 45px
+$facebook-dark-total-width: 504px
+$facebook-dark-total-height: 387px
+$facebook-dark-image: '../images/sprite-png.png'
+$facebook-dark: (74px, 232px, -74px, -232px, 64px, 45px, 504px, 387px, '../images/sprite-png.png', 'facebook_dark', )
+$facebook-hov-name: 'facebook_hov'
+$facebook-hov-x: 148px
+$facebook-hov-y: 232px
+$facebook-hov-offset-x: -148px
+$facebook-hov-offset-y: -232px
+$facebook-hov-width: 64px
+$facebook-hov-height: 45px
+$facebook-hov-total-width: 504px
+$facebook-hov-total-height: 387px
+$facebook-hov-image: '../images/sprite-png.png'
+$facebook-hov: (148px, 232px, -148px, -232px, 64px, 45px, 504px, 387px, '../images/sprite-png.png', 'facebook_hov', )
+$finance-name: 'finance'
+$finance-x: 441px
+$finance-y: 55px
+$finance-offset-x: -441px
+$finance-offset-y: -55px
+$finance-width: 63px
+$finance-height: 45px
+$finance-total-width: 504px
+$finance-total-height: 387px
+$finance-image: '../images/sprite-png.png'
+$finance: (441px, 55px, -441px, -55px, 63px, 45px, 504px, 387px, '../images/sprite-png.png', 'finance', )
+$finance-hov-name: 'finance_hov'
+$finance-hov-x: 146px
+$finance-hov-y: 58px
+$finance-hov-offset-x: -146px
+$finance-hov-offset-y: -58px
+$finance-hov-width: 63px
+$finance-hov-height: 45px
+$finance-hov-total-width: 504px
+$finance-hov-total-height: 387px
+$finance-hov-image: '../images/sprite-png.png'
+$finance-hov: (146px, 58px, -146px, -58px, 63px, 45px, 504px, 387px, '../images/sprite-png.png', 'finance_hov', )
+$games-name: 'games'
+$games-x: 220px
+$games-y: 342px
+$games-offset-x: -220px
+$games-offset-y: -342px
+$games-width: 63px
+$games-height: 45px
+$games-total-width: 504px
+$games-total-height: 387px
+$games-image: '../images/sprite-png.png'
+$games: (220px, 342px, -220px, -342px, 63px, 45px, 504px, 387px, '../images/sprite-png.png', 'games', )
+$games-hov-name: 'games_hov'
+$games-hov-x: 441px
+$games-hov-y: 0px
+$games-hov-offset-x: -441px
+$games-hov-offset-y: 0px
+$games-hov-width: 63px
+$games-hov-height: 45px
+$games-hov-total-width: 504px
+$games-hov-total-height: 387px
+$games-hov-image: '../images/sprite-png.png'
+$games-hov: (441px, 0px, -441px, 0px, 63px, 45px, 504px, 387px, '../images/sprite-png.png', 'games_hov', )
+$gmail-name: 'gmail'
+$gmail-x: 293px
+$gmail-y: 55px
+$gmail-offset-x: -293px
+$gmail-offset-y: -55px
+$gmail-width: 64px
+$gmail-height: 45px
+$gmail-total-width: 504px
+$gmail-total-height: 387px
+$gmail-image: '../images/sprite-png.png'
+$gmail: (293px, 55px, -293px, -55px, 64px, 45px, 504px, 387px, '../images/sprite-png.png', 'gmail', )
+$gmail-dark-name: 'gmail_dark'
+$gmail-dark-x: 293px
+$gmail-dark-y: 110px
+$gmail-dark-offset-x: -293px
+$gmail-dark-offset-y: -110px
+$gmail-dark-width: 64px
+$gmail-dark-height: 45px
+$gmail-dark-total-width: 504px
+$gmail-dark-total-height: 387px
+$gmail-dark-image: '../images/sprite-png.png'
+$gmail-dark: (293px, 110px, -293px, -110px, 64px, 45px, 504px, 387px, '../images/sprite-png.png', 'gmail_dark', )
+$gmail-hov-name: 'gmail_hov'
+$gmail-hov-x: 293px
+$gmail-hov-y: 165px
+$gmail-hov-offset-x: -293px
+$gmail-hov-offset-y: -165px
+$gmail-hov-width: 64px
+$gmail-hov-height: 45px
+$gmail-hov-total-width: 504px
+$gmail-hov-total-height: 387px
+$gmail-hov-image: '../images/sprite-png.png'
+$gmail-hov: (293px, 165px, -293px, -165px, 64px, 45px, 504px, 387px, '../images/sprite-png.png', 'gmail_hov', )
+$google-maps-name: 'google-maps'
+$google-maps-x: 441px
+$google-maps-y: 162px
+$google-maps-offset-x: -441px
+$google-maps-offset-y: -162px
+$google-maps-width: 16px
+$google-maps-height: 16px
+$google-maps-total-width: 504px
+$google-maps-total-height: 387px
+$google-maps-image: '../images/sprite-png.png'
+$google-maps: (441px, 162px, -441px, -162px, 16px, 16px, 504px, 387px, '../images/sprite-png.png', 'google-maps', )
+$google-play-name: 'google-play'
+$google-play-x: 467px
+$google-play-y: 188px
+$google-play-offset-x: -467px
+$google-play-offset-y: -188px
+$google-play-width: 16px
+$google-play-height: 16px
+$google-play-total-width: 504px
+$google-play-total-height: 387px
+$google-play-image: '../images/sprite-png.png'
+$google-play: (467px, 188px, -467px, -188px, 16px, 16px, 504px, 387px, '../images/sprite-png.png', 'google-play', )
+$google-name: 'google'
+$google-x: 441px
+$google-y: 289px
+$google-offset-x: -441px
+$google-offset-y: -289px
+$google-width: 15px
+$google-height: 15px
+$google-total-width: 504px
+$google-total-height: 387px
+$google-image: '../images/sprite-png.png'
+$google: (441px, 289px, -441px, -289px, 15px, 15px, 504px, 387px, '../images/sprite-png.png', 'google', )
+$horoscope-name: 'horoscope'
+$horoscope-x: 74px
+$horoscope-y: 342px
+$horoscope-offset-x: -74px
+$horoscope-offset-y: -342px
+$horoscope-width: 63px
+$horoscope-height: 45px
+$horoscope-total-width: 504px
+$horoscope-total-height: 387px
+$horoscope-image: '../images/sprite-png.png'
+$horoscope: (74px, 342px, -74px, -342px, 63px, 45px, 504px, 387px, '../images/sprite-png.png', 'horoscope', )
+$horoscope-hov-name: 'horoscope_hov'
+$horoscope-hov-x: 147px
+$horoscope-hov-y: 342px
+$horoscope-hov-offset-x: -147px
+$horoscope-hov-offset-y: -342px
+$horoscope-hov-width: 63px
+$horoscope-hov-height: 45px
+$horoscope-hov-total-width: 504px
+$horoscope-hov-total-height: 387px
+$horoscope-hov-image: '../images/sprite-png.png'
+$horoscope-hov: (147px, 342px, -147px, -342px, 63px, 45px, 504px, 387px, '../images/sprite-png.png', 'horoscope_hov', )
+$imbd-name: 'imbd'
+$imbd-x: 467px
+$imbd-y: 240px
+$imbd-offset-x: -467px
+$imbd-offset-y: -240px
+$imbd-width: 16px
+$imbd-height: 15px
+$imbd-total-width: 504px
+$imbd-total-height: 387px
+$imbd-image: '../images/sprite-png.png'
+$imbd: (467px, 240px, -467px, -240px, 16px, 15px, 504px, 387px, '../images/sprite-png.png', 'imbd', )
+$movies-name: 'movies'
+$movies-x: 222px
+$movies-y: 287px
+$movies-offset-x: -222px
+$movies-offset-y: -287px
+$movies-width: 64px
+$movies-height: 45px
+$movies-total-width: 504px
+$movies-total-height: 387px
+$movies-image: '../images/sprite-png.png'
+$movies: (222px, 287px, -222px, -287px, 64px, 45px, 504px, 387px, '../images/sprite-png.png', 'movies', )
+$movies-dark-name: 'movies_dark'
+$movies-dark-x: 367px
+$movies-dark-y: 0px
+$movies-dark-offset-x: -367px
+$movies-dark-offset-y: 0px
+$movies-dark-width: 64px
+$movies-dark-height: 45px
+$movies-dark-total-width: 504px
+$movies-dark-total-height: 387px
+$movies-dark-image: '../images/sprite-png.png'
+$movies-dark: (367px, 0px, -367px, 0px, 64px, 45px, 504px, 387px, '../images/sprite-png.png', 'movies_dark', )
+$movies-hov-name: 'movies_hov'
+$movies-hov-x: 367px
+$movies-hov-y: 55px
+$movies-hov-offset-x: -367px
+$movies-hov-offset-y: -55px
+$movies-hov-width: 64px
+$movies-hov-height: 45px
+$movies-hov-total-width: 504px
+$movies-hov-total-height: 387px
+$movies-hov-image: '../images/sprite-png.png'
+$movies-hov: (367px, 55px, -367px, -55px, 64px, 45px, 504px, 387px, '../images/sprite-png.png', 'movies_hov', )
+$music-name: 'music'
+$music-x: 367px
+$music-y: 110px
+$music-offset-x: -367px
+$music-offset-y: -110px
+$music-width: 64px
+$music-height: 45px
+$music-total-width: 504px
+$music-total-height: 387px
+$music-image: '../images/sprite-png.png'
+$music: (367px, 110px, -367px, -110px, 64px, 45px, 504px, 387px, '../images/sprite-png.png', 'music', )
+$music-dark-name: 'music_dark'
+$music-dark-x: 367px
+$music-dark-y: 165px
+$music-dark-offset-x: -367px
+$music-dark-offset-y: -165px
+$music-dark-width: 64px
+$music-dark-height: 45px
+$music-dark-total-width: 504px
+$music-dark-total-height: 387px
+$music-dark-image: '../images/sprite-png.png'
+$music-dark: (367px, 165px, -367px, -165px, 64px, 45px, 504px, 387px, '../images/sprite-png.png', 'music_dark', )
+$music-hov-name: 'music_hov'
+$music-hov-x: 367px
+$music-hov-y: 220px
+$music-hov-offset-x: -367px
+$music-hov-offset-y: -220px
+$music-hov-width: 64px
+$music-hov-height: 45px
+$music-hov-total-width: 504px
+$music-hov-total-height: 387px
+$music-hov-image: '../images/sprite-png.png'
+$music-hov: (367px, 220px, -367px, -220px, 64px, 45px, 504px, 387px, '../images/sprite-png.png', 'music_hov', )
+$other-name: 'other'
+$other-x: 293px
+$other-y: 342px
+$other-offset-x: -293px
+$other-offset-y: -342px
+$other-width: 63px
+$other-height: 45px
+$other-total-width: 504px
+$other-total-height: 387px
+$other-image: '../images/sprite-png.png'
+$other: (293px, 342px, -293px, -342px, 63px, 45px, 504px, 387px, '../images/sprite-png.png', 'other', )
+$other-hov-name: 'other_hov'
+$other-hov-x: 366px
+$other-hov-y: 342px
+$other-hov-offset-x: -366px
+$other-hov-offset-y: -342px
+$other-hov-width: 63px
+$other-hov-height: 45px
+$other-hov-total-width: 504px
+$other-hov-total-height: 387px
+$other-hov-image: '../images/sprite-png.png'
+$other-hov: (366px, 342px, -366px, -342px, 63px, 45px, 504px, 387px, '../images/sprite-png.png', 'other_hov', )
+$paypal-name: 'paypal'
+$paypal-x: 367px
+$paypal-y: 275px
+$paypal-offset-x: -367px
+$paypal-offset-y: -275px
+$paypal-width: 64px
+$paypal-height: 45px
+$paypal-total-width: 504px
+$paypal-total-height: 387px
+$paypal-image: '../images/sprite-png.png'
+$paypal: (367px, 275px, -367px, -275px, 64px, 45px, 504px, 387px, '../images/sprite-png.png', 'paypal', )
+$paypal-dark-name: 'paypal_dark'
+$paypal-dark-x: 0px
+$paypal-dark-y: 342px
+$paypal-dark-offset-x: 0px
+$paypal-dark-offset-y: -342px
+$paypal-dark-width: 64px
+$paypal-dark-height: 45px
+$paypal-dark-total-width: 504px
+$paypal-dark-total-height: 387px
+$paypal-dark-image: '../images/sprite-png.png'
+$paypal-dark: (0px, 342px, 0px, -342px, 64px, 45px, 504px, 387px, '../images/sprite-png.png', 'paypal_dark', )
+$paypal-hov-name: 'paypal_hov'
+$paypal-hov-x: 293px
+$paypal-hov-y: 0px
+$paypal-hov-offset-x: -293px
+$paypal-hov-offset-y: 0px
+$paypal-hov-width: 64px
+$paypal-hov-height: 45px
+$paypal-hov-total-width: 504px
+$paypal-hov-total-height: 387px
+$paypal-hov-image: '../images/sprite-png.png'
+$paypal-hov: (293px, 0px, -293px, 0px, 64px, 45px, 504px, 387px, '../images/sprite-png.png', 'paypal_hov', )
+$program-name: 'program'
+$program-x: 73px
+$program-y: 0px
+$program-offset-x: -73px
+$program-offset-y: 0px
+$program-width: 63px
+$program-height: 54px
+$program-total-width: 504px
+$program-total-height: 387px
+$program-image: '../images/sprite-png.png'
+$program: (73px, 0px, -73px, 0px, 63px, 54px, 504px, 387px, '../images/sprite-png.png', 'program', )
+$program-hov-name: 'program_hov'
+$program-hov-x: 0px
+$program-hov-y: 0px
+$program-hov-offset-x: 0px
+$program-hov-offset-y: 0px
+$program-hov-width: 63px
+$program-hov-height: 54px
+$program-hov-total-width: 504px
+$program-hov-total-height: 387px
+$program-hov-image: '../images/sprite-png.png'
+$program-hov: (0px, 0px, 0px, 0px, 63px, 54px, 504px, 387px, '../images/sprite-png.png', 'program_hov', )
+$shutterstock-name: 'shutterstock'
+$shutterstock-x: 467px
+$shutterstock-y: 136px
+$shutterstock-offset-x: -467px
+$shutterstock-offset-y: -136px
+$shutterstock-width: 16px
+$shutterstock-height: 16px
+$shutterstock-total-width: 504px
+$shutterstock-total-height: 387px
+$shutterstock-image: '../images/sprite-png.png'
+$shutterstock: (467px, 136px, -467px, -136px, 16px, 16px, 504px, 387px, '../images/sprite-png.png', 'shutterstock', )
+$traffic-name: 'traffic'
+$traffic-x: 293px
+$traffic-y: 220px
+$traffic-offset-x: -293px
+$traffic-offset-y: -220px
+$traffic-width: 64px
+$traffic-height: 45px
+$traffic-total-width: 504px
+$traffic-total-height: 387px
+$traffic-image: '../images/sprite-png.png'
+$traffic: (293px, 220px, -293px, -220px, 64px, 45px, 504px, 387px, '../images/sprite-png.png', 'traffic', )
+$traffic-dark-name: 'traffic_dark'
+$traffic-dark-x: 219px
+$traffic-dark-y: 110px
+$traffic-dark-offset-x: -219px
+$traffic-dark-offset-y: -110px
+$traffic-dark-width: 64px
+$traffic-dark-height: 45px
+$traffic-dark-total-width: 504px
+$traffic-dark-total-height: 387px
+$traffic-dark-image: '../images/sprite-png.png'
+$traffic-dark: (219px, 110px, -219px, -110px, 64px, 45px, 504px, 387px, '../images/sprite-png.png', 'traffic_dark', )
+$traffic-hov-name: 'traffic_hov'
+$traffic-hov-x: 219px
+$traffic-hov-y: 55px
+$traffic-hov-offset-x: -219px
+$traffic-hov-offset-y: -55px
+$traffic-hov-width: 64px
+$traffic-hov-height: 45px
+$traffic-hov-total-width: 504px
+$traffic-hov-total-height: 387px
+$traffic-hov-image: '../images/sprite-png.png'
+$traffic-hov: (219px, 55px, -219px, -55px, 64px, 45px, 504px, 387px, '../images/sprite-png.png', 'traffic_hov', )
+$weather-name: 'weather'
+$weather-x: 148px
+$weather-y: 287px
+$weather-offset-x: -148px
+$weather-offset-y: -287px
+$weather-width: 64px
+$weather-height: 45px
+$weather-total-width: 504px
+$weather-total-height: 387px
+$weather-image: '../images/sprite-png.png'
+$weather: (148px, 287px, -148px, -287px, 64px, 45px, 504px, 387px, '../images/sprite-png.png', 'weather', )
+$weather-dark-name: 'weather_dark'
+$weather-dark-x: 74px
+$weather-dark-y: 287px
+$weather-dark-offset-x: -74px
+$weather-dark-offset-y: -287px
+$weather-dark-width: 64px
+$weather-dark-height: 45px
+$weather-dark-total-width: 504px
+$weather-dark-total-height: 387px
+$weather-dark-image: '../images/sprite-png.png'
+$weather-dark: (74px, 287px, -74px, -287px, 64px, 45px, 504px, 387px, '../images/sprite-png.png', 'weather_dark', )
+$weather-hov-name: 'weather_hov'
+$weather-hov-x: 0px
+$weather-hov-y: 287px
+$weather-hov-offset-x: 0px
+$weather-hov-offset-y: -287px
+$weather-hov-width: 64px
+$weather-hov-height: 45px
+$weather-hov-total-width: 504px
+$weather-hov-total-height: 387px
+$weather-hov-image: '../images/sprite-png.png'
+$weather-hov: (0px, 287px, 0px, -287px, 64px, 45px, 504px, 387px, '../images/sprite-png.png', 'weather_hov', )
+$wikipedia-name: 'wikipedia'
+$wikipedia-x: 441px
+$wikipedia-y: 266px
+$wikipedia-offset-x: -441px
+$wikipedia-offset-y: -266px
+$wikipedia-width: 18px
+$wikipedia-height: 13px
+$wikipedia-total-width: 504px
+$wikipedia-total-height: 387px
+$wikipedia-image: '../images/sprite-png.png'
+$wikipedia: (441px, 266px, -441px, -266px, 18px, 13px, 504px, 387px, '../images/sprite-png.png', 'wikipedia', )
+$y-name: 'y'
+$y-x: 441px
+$y-y: 240px
+$y-offset-x: -441px
+$y-offset-y: -240px
+$y-width: 16px
+$y-height: 16px
+$y-total-width: 504px
+$y-total-height: 387px
+$y-image: '../images/sprite-png.png'
+$y: (441px, 240px, -441px, -240px, 16px, 16px, 504px, 387px, '../images/sprite-png.png', 'y', )
+$youtube-name: 'youtube'
+$youtube-x: 470px
+$youtube-y: 110px
+$youtube-offset-x: -470px
+$youtube-offset-y: -110px
+$youtube-width: 20px
+$youtube-height: 14px
+$youtube-total-width: 504px
+$youtube-total-height: 387px
+$youtube-image: '../images/sprite-png.png'
+$youtube: (470px, 110px, -470px, -110px, 20px, 14px, 504px, 387px, '../images/sprite-png.png', 'youtube', )
+$spritesheet-width: 504px
+$spritesheet-height: 387px
+$spritesheet-image: '../images/sprite-png.png'
+$spritesheet-sprites: ($amazon, $basecamp, $basecamp-dark, $basecamp-hov, $bing-maps, $bing, $craig, $dropbox, $dropbox-dark, $dropbox-hov, $ebay, $espn, $events, $events-dark, $events-hov, $facebook, $facebook-dark, $facebook-hov, $finance, $finance-hov, $games, $games-hov, $gmail, $gmail-dark, $gmail-hov, $google-maps, $google-play, $google, $horoscope, $horoscope-hov, $imbd, $movies, $movies-dark, $movies-hov, $music, $music-dark, $music-hov, $other, $other-hov, $paypal, $paypal-dark, $paypal-hov, $program, $program-hov, $shutterstock, $traffic, $traffic-dark, $traffic-hov, $weather, $weather-dark, $weather-hov, $wikipedia, $y, $youtube, )
+$spritesheet: (504px, 387px, '../images/sprite-png.png', $spritesheet-sprites, )
+
+/*
+  The provided mixins are intended to be used with the array-like variables
+
+  .icon-home
+    @include sprite-width($icon-home)
+
+  .icon-email
+    @include sprite($icon-email)
+
+  Example usage in HTML:
+    `display: block` sprite:
+    <div class="icon-home"></div>
+
+  To change `display` (e.g. `display: inline-block;`), we suggest using a common CSS class:
+    // CSS
+    .icon {
+      display: inline-block;
+    }
+
+    // HTML
+    <i class="icon icon-home"></i>
+  */
+@mixin sprite-width($sprite)
+  width: nth($sprite, 5)
+
+@mixin sprite-height($sprite)
+  height: nth($sprite, 6)
+
+@mixin sprite-position($sprite)
+  $sprite-offset-x: nth($sprite, 3)
+  $sprite-offset-y: nth($sprite, 4)
+  background-position: $sprite-offset-x  $sprite-offset-y
+
+@mixin sprite-image($sprite)
+  $sprite-image: nth($sprite, 9)
+  background-image: url(#{$sprite-image})
+
+@mixin sprite($sprite)
+  @include sprite-image($sprite)
+  @include sprite-position($sprite)
+  @include sprite-width($sprite)
+  @include sprite-height($sprite)
+
+/*
+  The `sprites` mixin generates identical output to the CSS template
+    but can be overridden inside of SASS
+
+  @include sprites($spritesheet-sprites)
+  */
+@mixin sprites($sprites)
+  @each $sprite in $sprites
+    $sprite-name: nth($sprite, 10)
+    .#{$sprite-name}
+      @include sprite($sprite)

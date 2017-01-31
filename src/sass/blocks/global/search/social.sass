@@ -1,0 +1,82 @@
+=search-social-ico($name,$mod)
+  &.mod-#{$mod}
+    &:before
+      +sprite($name)
+
+.search-social-list
+  list-style: none
+  padding: 15px 0
+  margin: 0
+  +clear
+
+  .list-item
+    float: left
+    position: relative
+    padding: 0 10px
+    &:after
+      position: absolute
+      content: ""
+      top: 50%
+      right: 0
+      width: 1px
+      height: 21px
+      background-color: #dcdcdc
+      transform: translateY(-50%)
+
+    &:last-child
+      border-right: 0
+
+    &.is-active
+
+      .item-ico
+        border: 1px solid $b-blue
+
+        &:hover
+          border: 1px solid $b-blue
+
+
+    .item-ico
+      display: block
+      position: relative
+      width: 24px
+      height: 24px
+      border: 1px solid transparent
+      box-sizing: border-box
+      cursor: pointer
+      &:hover
+        border: 1px solid #dcdcdc
+        &:after
+          display: block
+
+      &:active
+        border: 1px solid $b-blue
+
+      &:after
+        content: attr(data-label)
+        position: absolute
+        display: none
+        top: -25px
+        left: 100%
+        padding: 0 10px
+        max-width: 200px
+        white-space: nowrap
+        font-size: 13px
+        font-style: normal
+        height: 25px
+        line-height: 25px
+        background-color: gainsboro
+        +roboto-bold
+
+      &:before
+        position: absolute
+        content: ""
+        top: 50%
+        left: 50%
+        transform: translateX(-50%) translateY(-50%)
+
+      $search-social-ico-list: $amazon $bing-maps $craig $bing $ebay $espn $google $google-maps $google-play $imbd $shutterstock $wikipedia $y $youtube
+      $search-social-ico-name: amazon bing-maps craig bing ebay espn google google-maps google-play imbd shutterstock wikipedia y youtube
+
+      @each $ico in $search-social-ico-list
+        $i: index($search-social-ico-list,$ico)
+        +search-social-ico(nth($search-social-ico-list,$i),nth($search-social-ico-name,$i))

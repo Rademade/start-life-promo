@@ -1,0 +1,46 @@
+=index-bookmarks-hov-ico($name,$mod)
+  &.mod-#{$mod}
+    &:hover
+      .item-img
+        &:after
+          +sprite($name)
+
+=index-bookmarks-ico($name,$mod)
+  &.mod-#{$mod}
+    .item-img
+      &:after
+        +sprite($name)
+
+.index-bookmarks .bookmarks-list .list-item
+
+  $index-bookmarks-ico-list: $basecamp $dropbox $events $facebook $gmail $movies $music $paypal $traffic $weather $games $finance $program $horoscope $other
+  $index-bookmarks-ico-list-hover: $basecamp-hov $dropbox-hov $events-hov $facebook-hov $gmail-hov $movies-hov $music-hov $paypal-hov $traffic-hov $weather-hov $games-hov $finance-hov $program-hov $horoscope-hov $other-hov
+  $index-bookmarks-ico-name: basecamp dropbox events facebook gmail movies music paypal traffic weather games finance program horoscope other
+
+  @each $ico in $index-bookmarks-ico-list
+    $i: index($index-bookmarks-ico-list,$ico)
+    +index-bookmarks-ico(nth($index-bookmarks-ico-list,$i),nth($index-bookmarks-ico-name,$i))
+
+  @each $ico-png in $index-bookmarks-ico-list-hover
+    $i: index($index-bookmarks-ico-list-hover,$ico-png)
+    +index-bookmarks-hov-ico(nth($index-bookmarks-ico-list-hover,$i),nth($index-bookmarks-ico-name,$i))
+
+  .item-img
+    position: relative
+    display: block
+    max-width: 63px
+    padding-bottom: 55%
+    margin: 0 auto 6px auto
+
+    &:after
+      position: absolute
+      z-index: 1
+      bottom: 0
+      left: 0
+      content: ""
+
+    .item-notification
+      z-index: 2
+
+  &:nth-child(5n+1)
+    clear: both

@@ -1,0 +1,35 @@
+=tabs-settings-item($name)
+  &.mod-#{$name}
+    &.is-active
+      &:after
+        +svg-sprite(tabs_#{$name}_act)
+    &:after
+      +svg-sprite(tabs_#{$name})
+
+.tabs-settings
+  .settings-item
+    display: inline-block
+    position: relative
+    padding: 8px 0
+    width: 15px
+    height: 15px
+    cursor: pointer
+
+    &:after
+      position: absolute
+      content: ""
+      top: 50%
+      left: 50%
+      transform: translateY(-50%) translateX(-50%)
+
+    $tabs-settings-item-list: views edit search
+    @each $mod in $tabs-settings-item-list
+      +tabs-settings-item($mod)
+
+    &.mod-views
+      &.is-active
+        &:after
+          transform: translateY(-50%) translateX(-50%) rotate(180deg)
+
+    &.mod-search
+      display: none

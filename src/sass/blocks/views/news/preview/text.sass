@@ -1,0 +1,38 @@
+.news-preview .preview-item
+  .item-data
+    cursor: pointer
+    display: block
+    float: left
+    width: calc(100% - 42px)
+    padding: 8px 0
+    border-bottom: 1px solid $b-silver
+
+    &:hover
+
+      .data-title
+        color: $t-blue
+
+    &:visited
+
+      .data-title
+        color: $t-silver
+
+
+    .data-title
+      cursor: pointer
+      color: $t-black
+      font-size: em(13)
+      line-height: 15px
+      transition: color .3s ease
+      +arial
+
+      &:visited
+        color: $t-silver
+
+    .data-value
+      display: block
+      color: $t-silver
+      font-size: em(14)
+      line-height: 15px
+      text-transform: uppercase
+      +roboto-regular

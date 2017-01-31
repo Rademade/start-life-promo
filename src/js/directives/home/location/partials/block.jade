@@ -1,0 +1,28 @@
+.angucomplete-holder(ng-class="{'angucomplete-dropdown-visible': showDropdown}")
+  input(
+    ng-model='searchStr'
+    ng-disabled='disableInput'
+    type='text'
+    placeholder='{{placeholder}}'
+    ng-focus='onFocusHandler()'
+    class='{{inputClass}}'
+    autocapitalize='on'
+    autocorrect='off'
+    autocomplete='off'
+    ng-change='inputChangeHandler(searchStr)')
+  .angucomplete-dropdown(ng-show='showDropdown' on-body-click on-body-click-cb="hideResults($event)" condition="true")
+    .angucomplete-searching(ng-show='searching' ng-bind='textSearching')
+    .angucomplete-searching(ng-show='!searching && (!results || results.length == 0)' ng-bind='textNoResults')
+    .angucomplete-row(
+      ng-if="results"
+      ng-repeat='result in results | limitTo : 5'
+      ng-click='selectResult(result)'
+      ng-mouseenter='hoverRow($index)'
+      ng-class="{'angucomplete-selected-row': $index == currentIndex}")
+      .angucomplete-image-holder(ng-if='imageField')
+        img.angucomplete-image(ng-if="result.image && result.image != ''" ng-src='{{result.image}}')
+        .angucomplete-image-default(ng-if="!result.image && result.image != ''")
+      .angucomplete-title(ng-if='matchClass' ng-bind-html='result.city')
+      .angucomplete-title(ng-if='!matchClass') {{ result.city }}
+      .angucomplete-description(ng-if="matchClass && result.description && result.description != ''" ng-bind-html='result.description')
+      .angucomplete-description(ng-if="!matchClass && result.description && result.description != ''") {{ result.description }}

@@ -1,0 +1,7 @@
+li.preview-item(ng-repeat="news in newsPreviewCtrl.news" ng-if="newsPreviewCtrl.news")
+  span.item-date(ng-show="!news.divider") {{ news.date | dateFormat : 'simple' }}
+  span.item-date(ng-show="news.divider")
+
+  a.item-data(href="{{ news.sref }}" target="_blank")
+    span.data-title(ng-if="!news.divider") {{ news.title }}
+    span.data-value(ng-show="news.divider") {{ news.date | dateFormat }}

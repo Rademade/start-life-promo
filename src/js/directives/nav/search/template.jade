@@ -1,0 +1,6 @@
+ul.nav-list
+  li.list-item(ng-repeat="tab in navSearchCtrl.service.getTabs()" class="{{ tab.class }}"
+    ng-class="{ 'is-current' : $state.current.name == tab.sref }")
+    a.item-link-holder(ui-sref="{{ tab.sref }}")
+      i.item-ico
+      span.item-link {{ tab.name }}

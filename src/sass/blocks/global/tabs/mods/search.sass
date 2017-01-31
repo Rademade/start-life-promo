@@ -1,0 +1,20 @@
+.content-tabs
+  .search
+    display: none
+
+  &.is-searching
+    .search
+      display: block
+      margin-bottom: -1px
+      .search-input-holder
+        .selector-arrow
+          right: 5px
+          +svg-sprite(tabs_search)
+
+        .input-selector
+          padding: 5px 50px 5px 12px
+          height: 33px
+
+    .tabs
+      display: none
+

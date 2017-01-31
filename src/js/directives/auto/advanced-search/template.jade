@@ -1,0 +1,56 @@
+div.inputs-list
+  div.form-selector.mod-msearch(simple-select
+    selector="autoAdvancedSearchCtrl.factory.selectors.minYear"
+    placeholder="Year (min):"
+    placeholder-dynamic="true")
+
+  div.form-selector.mod-msearch(simple-select
+    selector="autoAdvancedSearchCtrl.factory.selectors.maxYear"
+    ng-class="{'is-error' : autoAdvancedSearchCtrl.factory.isYearErrorShowed()}"
+    placeholder="Year (max):"
+    placeholder-dynamic="true"
+    error-message="'Max year must be more then min year'")
+
+div.inputs-list
+  div.form-selector.mod-msearch(simple-select
+    selector="autoAdvancedSearchCtrl.factory.selectors.mileAge"
+    placeholder-dynamic="true"
+    placeholder="Mileage (under):")
+
+  div.form-selector.mod-msearch(simple-select
+    selector="autoAdvancedSearchCtrl.factory.selectors.bodyStyle"
+    placeholder-dynamic="true"
+    placeholder="Body style:")
+
+div.inputs-list
+  div.form-selector.mod-msearch(simple-select
+    selector="autoAdvancedSearchCtrl.factory.selectors.exteriorColor"
+    placeholder-dynamic="true"
+    placeholder="Exterior color:")
+
+  div.form-selector.mod-msearch(simple-select
+    selector="autoAdvancedSearchCtrl.factory.selectors.interiorColor"
+    placeholder-dynamic="true"
+    placeholder="Interior color:")
+
+div.inputs-list
+  div.form-selector.mod-msearch(simple-select
+    selector="autoAdvancedSearchCtrl.factory.selectors.transmission"
+    placeholder-dynamic="true"
+    placeholder="Transmission:")
+
+  div.form-selector.mod-msearch(simple-select
+    selector="autoAdvancedSearchCtrl.factory.selectors.driveType"
+    placeholder-dynamic="true"
+    placeholder="Drive type:")
+
+div.inputs-list
+  div.form-selector.mod-msearch(simple-select
+    selector="autoAdvancedSearchCtrl.factory.selectors.fuel"
+    placeholder-dynamic="true"
+    placeholder="Fuel:")
+
+  div.form-selector.mod-msearch(simple-select
+    selector="autoAdvancedSearchCtrl.factory.selectors.cylinder"
+    placeholder-dynamic="true"
+    placeholder="Cylinders:")

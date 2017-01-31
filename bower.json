@@ -1,0 +1,26 @@
+{
+  "name": "start-life-frontend-bower",
+  "dependencies": {
+    "angular": "latest",
+    "angular-sanitize": "latest",
+    "angular-translate": "latest",
+    "angular-ui-router": "latest",
+    "angularjs-rails-resource": "latest",
+    "gsap": "latest",
+    "lodash": "4.6.1",
+    "angular-youtube-mb": "https://github.com/brandly/angular-youtube-embed.git#1.0.2",
+    "ngstorage": "latest",
+    "angucomplete-alt": "latest",
+    "angular-xml": "latest",
+    "angular-cookies": "latest",
+    "ng-device-detector": "^3.0.1",
+    "Sortable": "latest",
+    "ng-autocomplete-commonjs": "https://github.com/hanford/ngAutocomplete.git"
+  },
+  "resolutions": {
+    "angular": "^1.5.3"
+  },
+  "devDependencies": {
+    "Sortable": "^1.4.2"
+  }
+}

@@ -1,0 +1,29 @@
+form.form.mod-log-reg(name="logForm" novalidate
+  ng-submit="logCtrl.submit(logForm.$valid)"
+  on-body-click on-body-click-cb="logCtrl.clearError()")
+  h2.form-title Log in
+
+  div.form-social
+    a.social-item.mod-fb(href="#" ng-click="logCtrl.authenticate('facebook')") Facebook
+    a.social-item.mod-in(href="#" ng-click="logCtrl.authenticate('linkedin')") Linkedin
+    a.social-item.mod-gp(href="#" ng-click="logCtrl.authenticate('google_oauth2')") Google+
+
+  label.input-holder(ng-class="{'is-error' : logCtrl.isSubmitted && !logForm.email.$valid}")
+    input.form-input(type="email" ng-model="logCtrl.user.email" name="email" ng-required="true"
+      ng-change="logCtrl.clearError()"
+      ng-pattern="/^[_a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,4})$/"
+      placeholder="Email" autocomplete="off")
+
+  label.input-holder(ng-class="{'is-error' : logCtrl.isSubmitted && !logForm.password.$valid || logCtrl.error.length > 0}")
+    input.form-input(type="password" ng-model="logCtrl.user.password" name="password" ng-change="logCtrl.clearError()"
+      ng-minlength="6" ng-maxlength="20" ng-required="true" placeholder="Password" autocomplete="off")
+    span.error-msg(ng-show="logCtrl.hasError(logForm.password, 'minlength')") Password must be at least 6 characters
+    span.error-msg(ng-show="logCtrl.hasError(logForm.password, 'maxlength')") Password must be not more than 20 characters
+    span.error-msg(ng-show="logCtrl.error.length > 0") {{ logCtrl.error }}
+
+  div.form-btn-list
+    div.btn-box
+      div.btn-link(ng-click="logCtrl.forgot()" click-preventer)
+        span Forgot password?
+    div.btn-box
+      button.form-btn.btn.mod-red Login

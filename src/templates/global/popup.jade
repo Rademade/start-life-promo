@@ -1,0 +1,135 @@
+//.popup-wrapper and .popup-holder - is a layout for all the popups
+div.popup-wrapper
+  div.popup-holder
+
+    //password recovery (email)
+    div.popup(on-body-click on-body-click-cb="logRegCtrl.closePopup()" condition="true" click-preventer)
+      p.popup-title Password Recovery
+      p.popup-description
+        | Enter the email address you used when you joined and we'll send you instructions to reset your password.
+      form.form.mod-popup(name="recoveryForm" novalidate)
+        label.input-holder(ng-class="{ 'is-error' : logRegCtrl.isEmailError(recoveryForm) || logRegCtrl.error.length > 0}")
+          input.form-input(type="email" ng-model="logRegCtrl.confirmationEmail" name="confirmationEmail" autocomplete="off"
+          ng-pattern="/^[_a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,4})$/" ng-required="true"
+          ng-change="logRegCtrl.clearError()" placeholder="Email")
+          span.error-msg(ng-show="logRegCtrl.hasError(recoveryForm.confirmationEmail, 'pattern')") Invalid e-mail
+          span.error-msg(ng-show="logRegCtrl.error.length > 0") {{ logRegCtrl.error }}
+
+        div.form-btn-list
+          div.btn-box
+            button.btn-link(ng-click="logRegCtrl.closePopup()")
+              span Cancel
+          div.btn-box.align-right(ng-click="logRegCtrl.resetEmail(recoveryForm.$valid)")
+            button.form-btn.btn.mod-red Send Reset Instructions
+
+    //password-recovery (enter password)
+    div.popup(on-body-click on-body-click-cb="logRegCtrl.closePopup()" condition="true" click-preventer)
+      p.popup-title Password Recovery
+      p.popup-description
+        | Enter new password.
+        br
+        | Good password contains a combination of letters and punctuation marks. It must include at lest 6 symbols.
+      form.form.mod-popup(name="recoveryForm" novalidate)
+        label.input-holder
+          input.form-input(type="text" placeholder="Password")
+          span.error-msg(ng-show="logRegCtrl.hasError(recoveryForm.confirmationEmail, 'pattern')") Invalid password
+        label.input-holder
+          input.form-input(type="text" placeholder="Repeat password")
+          span.error-msg(ng-show="logRegCtrl.hasError(recoveryForm.confirmationEmail, 'pattern')") Invalid password
+
+        div.form-btn-list
+          div.btn-box
+            button.btn-link
+              span Cancel
+          div.btn-box.align-right
+            button.form-btn.btn.mod-red Save
+
+    //remove account (with cancel)
+    div.popup.mod-notification(on-body-click on-body-click-cb="logRegCtrl.closePopup()" condition="true" click-preventer)
+      p.popup-title remove account
+      p.popup-description
+        | Are you sure you want to delete your account?
+
+      div.form-btn-list
+        div.btn-box
+          button.btn-link(ng-click="logRegCtrl.closePopup()")
+            span Cancel
+        div.btn-box.align-right
+          button.form-btn.btn.mod-red Continue
+
+    //All popups below has same structure, difference only in text.
+
+    //password-recovery (success)
+    div.popup.mod-notification(on-body-click on-body-click-cb="logRegCtrl.closePopup()" condition="true" click-preventer)
+      p.popup-title Password Recovery
+      p.popup-description
+        | The password has been
+        br
+        | successfully changed.
+
+      div.form-btn-list
+        div.btn-box
+          button.form-btn.btn.mod-red Continue
+
+
+    //password-recovery (check the e-mail)
+    div.popup.mod-notification(on-body-click on-body-click-cb="logRegCtrl.closePopup()" condition="true" click-preventer)
+      p.popup-title Password Recovery
+      p.popup-description
+        | Check the e-mail box to activate
+        br
+        | your profile.
+
+      div.form-btn-list
+        div.btn-box
+          button.form-btn.btn.mod-red Continue
+
+    //registration (success)
+    div.popup.mod-notification(on-body-click on-body-click-cb="logRegCtrl.closePopup()" condition="true" click-preventer)
+      p.popup-title Registration
+      p.popup-description
+        | Welcome! Your Start account ahs been successfully created.
+
+      div.form-btn-list
+        div.btn-box
+          button.form-btn.btn.mod-red Continue
+
+    //registration (e-mail)
+    div.popup.mod-notification(on-body-click on-body-click-cb="logRegCtrl.closePopup()" condition="true" click-preventer)
+      p.popup-title Registration
+      p.popup-description
+        | To finish/continue registration, go to your e-mail.
+
+      div.form-btn-list
+        div.btn-box
+          button.form-btn.btn.mod-red Continue
+
+    ////feedback
+    div.popup.mod-notification(on-body-click on-body-click-cb="logRegCtrl.closePopup()" condition="true" click-preventer)
+      p.popup-title Feedback
+      p.popup-description
+        | Thank you for your letter
+
+      div.form-btn-list
+        div.btn-box
+          button.form-btn.btn.mod-red Continue
+
+    //remove account
+    div.popup.mod-notification(on-body-click on-body-click-cb="logRegCtrl.closePopup()" condition="true" click-preventer)
+      p.popup-title remove account
+      p.popup-description
+        | The account has been removed.
+
+      div.form-btn-list
+        div.btn-box
+          button.form-btn.btn.mod-red Continue
+
+    //remove account(e-mail)
+    div.popup.mod-notification(on-body-click on-body-click-cb="logRegCtrl.closePopup()" condition="true" click-preventer)
+      p.popup-title remove account
+      p.popup-description
+        | To confirm deletion of your account, go to your e-mail.
+
+      div.form-btn-list
+        div.btn-box
+          button.form-btn.btn.mod-red Continue

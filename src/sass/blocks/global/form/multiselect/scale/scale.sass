@@ -1,0 +1,45 @@
+.form-multiselect .multiselect-dd-holder .dd-scale-list .list-item
+  .item-scale
+    float: left
+    margin-right: 7px
+    color: $t-silver
+    text-align: left
+    display: inline-block
+    +roboto-regular
+
+    .scale-value
+      float: left
+      width: 31px
+      display: inline-block
+      border: 1px solid $b-light-gray
+      border-left: none
+      border-right: none
+      font-size: em(13)
+      line-height: 19px
+      padding: 5px 0
+      text-align: center
+      +roboto-regular
+
+    .scale-btn
+      position: relative
+      cursor: pointer
+      display: inline-block
+      float: left
+      width: 33px
+      height: 31px
+      border: 1px solid $b-light-gray
+      background: #f3f4f5
+      box-sizing: border-box
+      transition: background .3s ease
+      &:after
+        content: ''
+        position: absolute
+        top: 50%
+        left: 50%
+        transform: translate(-50%, -50%)
+      &.mod-prev
+        &:after
+          +svg-sprite(scale-minus)
+      &.mod-next
+        &:after
+          +svg-sprite(scale-plus)

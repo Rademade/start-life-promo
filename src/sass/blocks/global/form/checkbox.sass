@@ -1,0 +1,52 @@
+.input-checkbox-item
+  position: relative
+  float: left
+  min-height: 20px
+  margin-bottom: 13px
+  cursor: pointer
+
+  .form-checkbox
+    position: absolute
+    top: 0
+    left: 0
+    opacity: 0
+
+  .form-checkbox-label
+    position: relative
+    display: inline-block
+    padding: 0 30px 0 20px
+    color: $t-gray
+    font-size: em(13)
+    line-height: 20px
+    word-break: break-word
+    cursor: pointer
+    +user-select
+    +roboto-regular
+
+    &:after,
+    &:before
+      content: ""
+      position: absolute
+      top: 50%
+      left: 0
+      transition: opacity 0.3s ease
+      transform: translateY(-50%)
+
+    &:after
+      opacity: 1
+      +svg-sprite(checkbox-default)
+
+    &:before
+      opacity: 0
+      +svg-sprite(checkbox-checked)
+
+  .form-checkbox //checked
+    &:checked + .form-checkbox-label
+      &:after
+        opacity: 0
+      &:before
+        opacity: 1
+
+.inputs-list
+  .input-checkbox-item
+    margin-top: -5px

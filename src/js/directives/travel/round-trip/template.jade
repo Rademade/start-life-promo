@@ -1,0 +1,44 @@
+div.form-field
+  div.inputs-list
+    label.input-holder.mod-msearch(direction
+      ng-class="{'is-error' : roundTripCtrl.isDirectionError(roundTripCtrl.directionFrom)}"
+      service="roundTripCtrl.directionFrom"
+      placeholder="Flying from"
+      on-selected-cb="roundTripCtrl.setCity()")
+
+    label.input-holder.mod-msearch(direction
+      ng-class="{'is-error' : roundTripCtrl.isDirectionError(roundTripCtrl.directionTo)}"
+      service="roundTripCtrl.directionTo"
+      placeholder="Flying to"
+      on-selected-cb="roundTripCtrl.departDateON()")
+
+  div.inputs-list
+    div.input-holder.mod-msearch.mod-mb0
+      div.form-datepicker(datepicker
+        ng-class="roundTripCtrl.dateFrom.getClass(roundTripCtrl.isFormSubmitted)"
+        service="roundTripCtrl.dateFrom"
+        on-select-cb="roundTripCtrl.onDateFromSelected()"
+        on-toggle-cb="roundTripCtrl.closeAllAccept(datepicker)"
+        placeholder="Depart")
+
+      .form-selector.mod-msearch.mod-esmall(simple-select selector="roundTripCtrl.exactDatesFrom"
+        placeholder-dynamic="true" placeholder="Exact dates")
+
+    div.input-holder.mod-msearch.mod-mb0
+      div.form-datepicker(datepicker
+        ng-class="roundTripCtrl.getDateToDatapickerCss()"
+        service="roundTripCtrl.dateTo"
+        on-select-cb="roundTripCtrl.onDateToSelected()"
+        on-toggle-cb="roundTripCtrl.closeAllAccept(datepicker)"
+        placeholder="Return")
+
+      .form-selector.mod-msearch.mod-esmall(simple-select selector="roundTripCtrl.exactDatesTo"
+        placeholder-dynamic="true" placeholder="Exact dates")
+
+  div.inputs-list(flight-type
+    service="roundTripCtrl.flightType"
+    on-toggle-cb="roundTripCtrl.closeAllAccept(flightType)"
+    sync="roundTripCtrl.sync"
+    show-classes="true")
+
+div.filter-list(flight-sites on-click-cb="roundTripCtrl.open(site)")

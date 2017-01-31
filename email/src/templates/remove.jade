@@ -1,0 +1,24 @@
+//include layout
+extends layout/main
+
+
+block content
+
+  tr
+    td(width="100%" style="width:100%;height:100%;")
+      table(border="0"
+        cellpadding="0"
+        cellspacing="0"
+        width = "100%"
+        bgcolor="#f6f8f9"
+        style="margin:0; " +
+        "padding:0;"
+      )
+
+        +mail-main-img('http://start-life.rademade.com/images/mail/mail_remove.png','57','57','Are you sure?','55','30')
+
+        +mail-main-title('Are you sure?', '15')
+
+        +mail-main-text(40,  'We are very sorry that you are leaving us. <br> If you want to delete your account, press <br> “Remove account” button.')
+
+        +mail-main-btn('Remove account', '58')

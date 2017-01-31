@@ -1,0 +1,26 @@
+.tabs-list .list-item
+  .item-remove
+    position: absolute
+    display: none
+    top: -1px
+    right: -1px
+    width: 25px
+    height: 24px
+    border: 1px solid $b-light-gray
+    box-sizing: border-box
+    cursor: pointer
+
+    &:hover
+      border: 1px solid $t-blue
+      cursor: pointer
+
+      &:after
+        +svg-sprite(tabs_remove_hov)
+
+    &:after
+      position: absolute
+      content: ""
+      top: 50%
+      left: 50%
+      transform: translateY(-50%) translateX(-50%)
+      +svg-sprite(tabs_remove)

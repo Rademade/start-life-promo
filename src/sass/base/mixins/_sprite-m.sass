@@ -1,0 +1,8 @@
+=svg-sprite($name)
+  @extend .svg-#{$name}
+  @extend .svg-#{$name}-dims
+
+
+%svg-common
+  background-repeat: no-repeat !important
+  background-image: url("../images/sprite.svg")

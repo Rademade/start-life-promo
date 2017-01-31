@@ -1,0 +1,15 @@
+.form-multiselect
+  position: relative
+  width: 250px
+  margin-bottom: 15px
+  .multiselect-dd-holder
+    display: none
+
+  &.is-current
+    z-index: 2
+    .multiselect-value
+      border: 1px solid $b-blue
+      &:after
+        transform: translateY(-50%) rotate(180deg)
+    .multiselect-dd-holder
+      display: block

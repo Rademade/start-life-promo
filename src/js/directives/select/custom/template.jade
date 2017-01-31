@@ -1,0 +1,28 @@
+div.selector-wrapper(
+  on-body-click = ""
+  on-body-click-cb="customSelectCtrl.selector.close()"
+  ng-click="customSelectCtrl.toggle()"
+  condition="customSelectCtrl.selector.isOpen"
+  ng-class="{'is-current' : customSelectCtrl.selector.isOpen}")
+
+  input.input-selector(
+    ng-model="customSelectCtrl.query"
+    type="text"
+    placeholder="{{customSelectCtrl.getInputPlaceholder()}}"
+    ng-focus="customSelectCtrl.onFocus()"
+    ng-change="customSelectCtrl.onChange()")
+
+  span.error-msg() {{ errorMessage }}
+
+  i.selector-arrow
+  div.select-list(ng-if="selector.values.length && customSelectCtrl.selector.isOpen")
+    div.select-list-box()
+      div.select-item(
+        click-preventer="all"
+        ng-click="customSelectCtrl.select(value)"
+        ng-repeat="value in customSelectCtrl.getValues()")
+
+        span.select-item-text() {{ value.name }}
+
+      div.select-item(ng-show="customSelectCtrl.getValues().length == 0")
+        span.select-item-text Not found

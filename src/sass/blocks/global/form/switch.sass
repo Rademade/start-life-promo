@@ -1,0 +1,47 @@
+.form-switch
+  position: absolute
+  top: 0
+  right: 0
+  height: 100%
+
+  .switch-holder
+    display: table
+    height: 100%
+    table-layout: fixed
+
+  .switch-item
+    display: table-cell
+    position: relative
+    width: 36px
+    height: 100%
+    text-align: center
+    color: $t-silver
+    font-size: em(13)
+    font-weight: 400
+    vertical-align: middle
+    box-sizing: border-box
+    cursor: pointer
+    &.is-active
+      color: $t-blue
+      &:after
+        content: ""
+
+    &:after
+      position: absolute
+      left: 0
+      bottom: 0
+      width: 37px
+      height: 3px
+      z-index: 2
+      background-color: $b-blue
+      
+      
+    &:before
+      position: absolute
+      z-index: 1
+      left: 0
+      top: 0
+      content: ""
+      width: 1px
+      height: 100%
+      background-color: $b-light-gray

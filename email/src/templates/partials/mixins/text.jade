@@ -1,0 +1,6 @@
+mixin mail-main-text(marginBottom, text)
+  tr
+    td.msg-text(width="100%" align="center" style="width:100%;height:100%; text-align: center; font-family: Arial, sans-serif; font-size: 13px;color: #666666;line-height: 21px;")
+      span.msg-text(style="font-family: Arial, sans-serif; font-size: 13px;color: #666666;line-height: 21px;")!= text
+  tr
+    +spacer(marginBottom)

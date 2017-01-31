@@ -1,0 +1,56 @@
+=form-social-profile-item($class-mod,$bg-color)
+  &.mod-#{$class-mod}
+    background-color: $bg-color
+
+    &:hover
+      background-color: darken($bg-color, 10)
+    &:active
+      background-color: darken($bg-color, 15)
+
+.form-social-profile
+  width: 100%
+  max-width: 210px
+  +media-below($media-desktop)
+    max-width: 100%
+
+  .profile-item
+    display: block
+    margin-bottom: 9px
+    padding: 8px 35px
+    width: 100%
+    color: $white
+    font-size: em(13)
+    line-height: 1.5
+    text-align: center
+    box-sizing: border-box
+    transition: background-color .3s ease
+    +roboto-regular
+
+    &.is-active
+      &:before
+        right: 12px
+        +svg-sprite(form_social_delete)
+
+    &:after
+      position: absolute
+      content: ""
+      top: 0
+      right: 0
+      width: 37px
+      height: 100%
+      background-color: rgba(255,255,255,0.1)
+
+    &:before
+      position: absolute
+      content: ""
+      top: 50%
+      right: 11px
+      transform: translateY(-50%)
+      +svg-sprite(form_social_plus)
+
+    $form-social-profile-item-list: fb tw in gp
+    $form-social-profile-item-color: #3b5999 #4ac0fe #0077b5 #d63c30
+
+    @each $item in $form-social-profile-item-list
+      $i: index($form-social-profile-item-list,$item)
+      +form-social-profile-item(nth($form-social-profile-item-list,$i),nth($form-social-profile-item-color,$i))

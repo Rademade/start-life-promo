@@ -1,0 +1,26 @@
+.filter-list
+  .filter-item
+    float: left
+    display: inline-block
+    padding: 4px 10px
+    margin-right: 8px
+    margin-bottom: 8px
+    color: $white
+    font-size: em(13)
+    border: 1px solid $b-blue
+    background: $b-blue
+    cursor: pointer
+    transition: background .3s ease, border .3s ease
+    +roboto-regular
+    
+    &.is-disabled
+      cursor: default
+      color: $t-gray
+      background: $bg-elight-gray
+      border: 1px solid $b-dark-gray
+      &:hover
+        background: $bg-elight-gray
+
+    &:hover
+      background: darken($b-blue, 10)
+    

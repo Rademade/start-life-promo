@@ -1,0 +1,35 @@
+.content-nav  .nav-list .list-item
+  .item-ico
+    position: absolute
+    top: 50%
+    left: 0
+    width: 24px
+    height: 24px
+    border-radius: 50%
+    border: 1px solid transparent
+    transform: translateY(-50%)
+    transition: border .3s ease
+    &:after,
+    &:before
+      content: ''
+      position: absolute
+      top: 50%
+      left: 50%
+      transform: translate(-50%, -50%) scale(1)
+      transition: opacity .3s ease, transform .3s ease
+    &:before
+      opacity: 0
+    &:after
+      opacity: 1
+
+$categories : news, travel, cars, homes, shopping, jobs, dating, profile, partners, contacts
+
+.content-nav .nav-list
+  .list-item
+    @each $category in $categories
+      &.mod-#{$category}
+        .item-ico
+          &:after
+            +svg-sprite('nav-#{$category}')
+          &:before
+            +svg-sprite('nav-#{$category}-cur')

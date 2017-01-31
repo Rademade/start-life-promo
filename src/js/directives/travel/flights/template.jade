@@ -1,0 +1,8 @@
+div.form-field
+  label.input-radio-item(ng-repeat="type in flightsCtrl.factory.getTypes()" ng-click="flightsCtrl.factory.setType(type.name)")
+    input.form-radio(type="radio" name="filghtType" ng-checked="type.active")
+    span.form-radio-label {{ type.name }}
+
+div(round-trip ng-if="flightsCtrl.factory.isType('Round-trip') && flightsCtrl.sync" sync-service="flightsCtrl.sync")
+div(one-way ng-if="flightsCtrl.factory.isType('One way') && flightsCtrl.sync" sync-service="flightsCtrl.sync")
+div(multi-city ng-if="flightsCtrl.factory.isType('Multi-city') && flightsCtrl.sync" sync-service="flightsCtrl.sync")

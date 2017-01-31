@@ -1,0 +1,41 @@
+div.inputs-list
+  div.form-selector.mod-msearch(simple-select
+    selector="homeAdvancedSearchCtrl.selectors.propertyType"
+    placeholder="Property type:" placeholder-dynamic="true")
+
+div.inputs-list
+  div.form-selector.mod-msearch(simple-select
+    selector="homeAdvancedSearchCtrl.selectors.minHouseSize"
+    placeholder="House size (min):" placeholder-dynamic="true")
+  div.form-selector.mod-msearch(simple-select
+    ng-class="{'is-error' : homeAdvancedSearchCtrl.isHouseSizeError()}"
+    selector="homeAdvancedSearchCtrl.selectors.maxHouseSize"
+    placeholder="House size (max):" placeholder-dynamic="true"
+    error-message="'Max home size must be more then min home size'")
+
+div.inputs-list
+  div.form-selector.mod-msearch(simple-select
+    selector="homeAdvancedSearchCtrl.selectors.minLotSize"
+    placeholder="Lot size (min):" placeholder-dynamic="true")
+  div.form-selector.mod-msearch(simple-select
+    ng-class="{'is-error' : homeAdvancedSearchCtrl.isLotSizeError()}"
+    selector="homeAdvancedSearchCtrl.selectors.maxLotSize"
+    placeholder="Lot size (max):" placeholder-dynamic="true"
+    error-message="'Max lot size must be more then min lot size'")
+
+div.inputs-list
+  div.form-selector.mod-msearch(simple-select
+    selector="homeAdvancedSearchCtrl.selectors.minYearBuild"
+    placeholder="Year Built (min):" placeholder-dynamic="true")
+  div.form-selector.mod-msearch(simple-select
+    ng-class="{'is-error' : homeAdvancedSearchCtrl.isYearError()}"
+    selector="homeAdvancedSearchCtrl.selectors.maxYearBuild"
+    placeholder="Year Built (max):" placeholder-dynamic="true"
+    error-message="'Max year build must be more then min year'")
+
+div.inputs-list
+  label.input-checkbox-item
+    input.form-checkbox(type="checkbox" name="abc"
+      ng-checked="homeAdvancedSearchCtrl.selectors.openHouses"
+      ng-click="homeAdvancedSearchCtrl.toggle()")
+    span.form-checkbox-label Open Houses

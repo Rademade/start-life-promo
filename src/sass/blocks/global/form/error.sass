@@ -1,0 +1,70 @@
+&.is-error
+
+.form-selector
+
+  &.is-disabled
+    cursor: default
+    pointer-events: none
+
+    .input-selector
+      background: #f7f7f7
+
+
+  &.is-error
+
+    .input-selector
+      position: relative
+      z-index: 2
+      border: 1px solid $bg-red
+
+    .error-msg
+      display: inline-block
+
+
+.input-holder
+
+  &.is-error
+
+    .form-textarea
+      border: 1px solid $bg-red
+
+    .form-input
+      border: 1px solid $bg-red
+
+    .error-msg
+      display: inline-block
+
+
+.form-datepicker
+
+  &.is-error
+
+    .datepicker-value
+      border: 1px solid $bg-red
+
+    .error-msg
+      display: inline-block
+
+
+.form-multiselect
+
+  &.is-error
+
+    .multiselect-value
+      border: 1px solid $bg-red
+
+    .error-msg
+      display: inline-block
+
+
+.error-msg
+  position: absolute
+  bottom: 100%
+  left: 0
+  display: none
+  padding: 2px 5px
+  color: #ffffff
+  font-size: em(11)
+  line-height: 14px
+  background: $btn-bg-red
+  +roboto-bold

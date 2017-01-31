@@ -1,0 +1,17 @@
+ul.nav-list(ng-sortable="newsSitesCtrl.config")
+  li.list-item.mod-news(ng-repeat="site in newsSitesCtrl.unarchived"
+    ng-class="{ 'is-current' : $stateParams.site_id == site.id, 'list-divider' : site.divider }")
+    div.item-link-holder(ng-if="!site.divider")
+      a.item-link(ng-click="newsSitesCtrl.setSite(site)"
+    ng-dblclick="newsSitesCtrl.openSite(site)" ui-sref="public.news.show({site_id: site.id})")
+        | {{ site.name }}
+        i.item-ico
+      i.item-delete(ng-click="newsSitesCtrl.archive(site)")
+
+ul.nav-list.mod-p0
+  li.list-item.mod-add(ng-class="{ 'is-selected is-large' : newsSitesCtrl.isSelectorShowed }")
+    span.item-link(ng-click="newsSitesCtrl.showSelector()" ng-show="newsSitesCtrl.archivedSitesExist()"
+      on-body-click on-body-click-cb="newsSitesCtrl.isSelectorShowed = false" condition="true") Add site
+    div.form-selector(site-select selector="newsSitesCtrl.selector" current-id = "newsSitesCtrl.currentId"
+      on-selected-cb="newsSitesCtrl.hideSelector()" auto-clear="true" ng-mouseover="newsSitesCtrl.mouseover()"
+      on-change-cb="newsSitesCtrl.changeCurrentId(sites)")

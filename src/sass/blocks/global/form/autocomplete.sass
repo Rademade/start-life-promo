@@ -1,0 +1,64 @@
+.input-holder
+  &.mod-msearch
+
+    .angucomplete-dropdown
+      position: absolute
+      z-index: 10
+      top: 100%
+      margin-top: -1px
+      left: 0
+      width: 100%
+      padding: 3px 0
+      background: #ffffff
+      border: 1px solid gainsboro
+      box-shadow: 0 3px 0 rgba(220, 220, 220, 0.42)
+      box-sizing: border-box
+
+      .highlight
+        color: $t-black
+        +roboto-bold
+
+
+    .angucomplete-searching,
+    .angucomplete-title
+      padding: 5px 10px
+      border-bottom: 0
+      color: $t-silver
+      font-size: em(13)
+      line-height: 1.42
+      white-space: nowrap
+      +roboto-regular
+
+    .angucomplete-row
+      display: block
+
+    .angucomplete-title
+      cursor: pointer
+      display: inline-block
+      margin: 0
+
+      &:hover
+        color: $t-blue
+
+        .highlight
+          color: $t-blue
+
+      &.is-current
+        color: $t-blue
+
+        .highlight
+          color: $t-blue
+
+
+    .angucomplete-holder
+
+      .form-input
+        position: relative
+        z-index: 11
+        display: block
+        width: 100%
+        color: #666666
+        font-size: em(13)
+        box-sizing: border-box
+        +roboto-regular
+        +placeholder($t-silver, 13px, inherit, robotoregular)

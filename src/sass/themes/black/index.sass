@@ -1,0 +1,37 @@
+html.dark-theme
+  .index-data .search .search-input-holder
+    .selector-wrapper
+      &.is-current
+        .input-selector
+          background-color: #fff
+          border: 1px solid $b-blue
+
+        .selector-arrow
+          +svg-sprite(index_search_hov)
+
+      .input-selector
+        background-color: $bg-dark-gray
+        border-color: $b-dark-gray
+
+  =index-bookmarks-ico($name,$mod)
+    &.mod-#{$mod}
+      .item-img
+        &:after
+          +sprite($name)
+
+  .index-bookmarks .bookmarks-list .list-item
+    color: $t-dark  
+    &:hover
+      color: $t-blue
+
+    $index-bookmarks-ico-list: $basecamp_dark $dropbox_dark $events_dark $facebook_dark $gmail_dark $movies_dark $music_dark $paypal_dark $traffic_dark $weather_dark
+    $index-bookmarks-ico-name: basecamp dropbox events facebook gmail movies music paypal traffic weather
+
+    @each $ico in $index-bookmarks-ico-list
+      $i: index($index-bookmarks-ico-list,$ico)
+      +index-bookmarks-ico(nth($index-bookmarks-ico-list,$i),nth($index-bookmarks-ico-name,$i))
+
+
+  .index-bookmarks .bookmarks-list .list-item
+    .item-notification
+      border-color: $bg-extra-dark

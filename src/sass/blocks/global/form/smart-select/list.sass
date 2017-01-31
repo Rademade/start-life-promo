@@ -1,0 +1,33 @@
+.form-selector
+
+  .select-list
+    max-height: 200px
+    margin-top: -1px
+    padding: 0 10px 0 0
+    border: 1px solid $b-light-gray
+    box-shadow: 0 3px 0 rgba(220, 220, 220, 0.42)
+    box-sizing: border-box
+
+    &.empty
+      padding: 0
+      border: none
+      box-shadow: none
+
+  .select-list-box
+    height: 100%
+    overflow-y: auto
+    box-sizing: border-box
+    &::-webkit-scrollbar
+      width: 7px
+
+    &::-webkit-scrollbar-track
+      background: none
+
+      &:hover
+        background: #F8F8F8
+
+    &::-webkit-scrollbar-thumb
+      background: #d8dbdd
+
+      &:hover
+        background: #D8D8D8

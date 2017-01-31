@@ -1,0 +1,42 @@
+{
+  "manifest_version": 2,
+  "name": "Start",
+  "description": "You use Google search or Bing, the social network Facebook, Gmail or Yahoo for email, YouTube for video, pay with PayPal account, buy products on Amazon or Ebay, read New York Times, Forbes and CNET. All these and much more are now available in one app, just in one click.",
+  "version": "1.0",
+
+  "browser_action": {
+    "default_title": "Start",
+    "options_page": "index.html"
+  },
+
+  "permissions": [
+    "activeTab",
+    "tabs"
+  ],
+
+  "chrome_url_overrides" : {
+    "newtab": "index.html"
+  },
+
+  "content_scripts": [
+    {
+      "matches": [
+        "http://*/*", "https://*/*"
+      ],
+      "js": [
+        "/js/vendor.js",
+        "/js/fonts.js",
+        "/js/application.js",
+        "/js/templates.js"
+      ],
+      "css": [
+        "/css/fonts.css",
+        "/css/stylesheets.css"
+      ]
+    }
+  ],
+
+  "homepage_url": "http://start-life.rademade.com/",
+  "content_security_policy": "script-src 'self' https://accounts.google.com https://apis.google.com https://maps.googleapis.com https://maps.gstatic.com https://www.youtube.com/iframe_api https://s.ytimg.com; object-src 'self'"
+
+}

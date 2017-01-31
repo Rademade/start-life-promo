@@ -1,0 +1,11 @@
+=promo-item-font($val)
+  &.mod-#{$val}
+    font-size: em($val)
+
+.promo-item
+  &.mod-83
+    +roboto-medium
+
+  $promo-item-font-list: 16 20 26 33 36 43 83
+  @each $item-font in $promo-item-font-list
+    +promo-item-font($item-font)

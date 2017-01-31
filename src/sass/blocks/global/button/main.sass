@@ -1,0 +1,54 @@
+.btn
+  display: inline-block
+  padding: 0 20px
+  outline: none
+  border: 0
+  color: $white
+  font-size: em(13)
+  height: 37px
+  line-height: 35px
+  background-color: $bg-light-gray
+  box-sizing: border-box
+  transition: background .3s ease, color .3s ease
+
+  &.mod-large
+
+
+  &.mod-full
+    width: 100%
+
+  &.mod-ico
+    padding: 0 20px 0 50px
+
+  &.mod-plus
+    &:after
+      position: absolute
+      content: ""
+      top: 50%
+      left: 30px
+      transform: translateY(-50%)
+      +svg-sprite(btn_plus)
+
+  &:hover
+    color: lighten($white, 15)
+    background: darken($bg-light-gray, 10)
+
+  &:active
+    color: lighten($white, 30)
+    background: darken($bg-light-gray, 30)
+
+.btn-box
+  &.align-left
+    text-align: left
+
+  &.align-right
+    text-align: right
+
+  &.align-center
+    text-align: center
+
+    .btn
+      margin: 0 10px
+
+  &.mod-full
+    width: 100%

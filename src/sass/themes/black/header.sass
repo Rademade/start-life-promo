@@ -1,0 +1,29 @@
+html.dark-theme
+  .header
+    background-color: $bg-dark
+    border-bottom: 1px solid $b-dark
+
+  .header-settings .settings-list .list-item
+    .item-link
+      color: $t-dark-lighten-gray
+      &:after
+        background-color: $bg-dark-lighten-gray
+
+  .header-menu .menu-list .list-item .item-link
+    color: $t-dark-gray
+
+    &:after
+      opacity: .5
+
+    &.is-active
+      color: $t-blue
+
+      &:after
+        opacity: 1
+
+  .header-switch
+    .switch-area
+      border-color: $b-dark-lighten-gray
+
+    .checkbox-label
+      background-color: $bg-dark-lighten-gray

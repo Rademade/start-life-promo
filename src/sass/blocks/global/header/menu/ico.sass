@@ -1,0 +1,42 @@
+=header-menu-ico($name)
+  &.mod-#{$name}
+    &:after
+      +svg-sprite(header_#{$name})
+
+    &:hover
+      &:after
+        +svg-sprite(header_#{$name}_hov)
+
+    &.is-active
+      &:after
+        +svg-sprite(header_#{$name}_act)
+
+      &:hover
+        &:after
+          +svg-sprite(header_#{$name}_act)
+
+
+.header-menu .menu-list .list-item .item-link
+  &:after
+    position: absolute
+    content: ''
+    top: 50%
+    left: 0
+    transform: translateY(-50%)
+
+  $header-menu-ico-list: home search news
+  @each $ico in $header-menu-ico-list
+    +header-menu-ico($ico)
+
+.as-sortable-item
+  .item-link
+    &:after
+      position: absolute
+      content: ''
+      top: 50%
+      left: 0
+      transform: translateY(-50%)
+
+    $header-menu-ico-list: home search news
+    @each $ico in $header-menu-ico-list
+      +header-menu-ico($ico)

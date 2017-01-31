@@ -1,0 +1,44 @@
+.form-datepicker .datepicker-calendar
+  .calendar-month
+    position: relative
+    width: 100%
+    padding: 10px 35px
+    box-sizing: border-box
+    text-align: center
+    font-size: em(13)
+    line-height: 18px
+    color: $t-silver
+    +roboto-regular
+
+    .calendar-btn
+      cursor: pointer
+      position: absolute
+      top: 0
+      height: 100%
+      width: 35px
+      transition: background .3s ease
+
+      &:after
+        content: ''
+        position: absolute
+        top: 50%
+        left: 50%
+        transform: translate(-50%, -50%)
+
+      &.mod-prev
+        left: 0
+        &:after
+          +svg-sprite(form-left-arrow)
+
+      &.mod-next
+        right: 0
+        &:after
+          +svg-sprite(form-right-arrow)
+
+      &:hover
+        background: $bg-blue
+
+      &.is-disabled
+        cursor: default
+        background: $bg-gray
+        pointer-events: none

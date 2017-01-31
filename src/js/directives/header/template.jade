@@ -1,0 +1,23 @@
+div.fix
+  div.header-menu
+    ul.menu-list(ng-sortable="headerCtrl.config")
+      li.list-item(ng-repeat="tab in headerCtrl.tabs" )
+        a.item-link(ui-sref="{{ tab.sref }}" class="{{ tab.classMod }}"
+          ng-class="{ 'is-active' : tab.active }"
+          ng-click="headerCtrl.headerTabService.setTab(tab, headerCtrl.tabs)")
+          span.link-text() {{ tab.name }}
+
+  div.header-settings
+    ul.settings-list
+      li.list-item
+        a.item-link(
+          ng-class="{ 'mod-nav' : headerCtrl.settingsUpdated, 'is-active' : headerCtrl.isActiveState() }"
+          ui-sref="index.log-reg")
+          span.link-text() {{ headerCtrl.profileText() }}
+
+      li.list-item
+        span.header-switch
+          span.switch-area
+            input.switch-input(type="checkbox")
+            span.checkbox-label
+              span.label-text switcher

@@ -1,0 +1,22 @@
+=form-social-ico($name)
+  &.mod-#{$name}
+    background: url($img-path + "form/log_reg_#{$name}.png") no-repeat
+    background-size: 100% auto
+
+.form-social
+  +clear
+  .social-item
+    float: left
+    margin: 0 12px 10px 0
+    width: 32px
+    height: 32px
+    overflow: hidden
+    text-indent: -9999px
+    transition: opacity $transitionVal ease
+
+    $form-social-ico-list: fb tw in gp
+    @each $ico in $form-social-ico-list
+      +form-social-ico($ico)
+
+    &:hover
+      opacity: .7

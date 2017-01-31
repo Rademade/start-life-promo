@@ -1,0 +1,16 @@
+span.error-msg(ng-if="errorMessage") {{ errorMessage }}
+
+div.datepicker-value(ng-click="datepickerCtrl.toggle()" click-preventer="all")
+  span.value-data() {{ datepickerCtrl.getDate() }}
+div.datepicker-dd-holder(on-body-click on-body-click-cb="datepickerCtrl.close()" click-preventer)
+  div.datepicker-dd
+    div.datepicker-calendar(ng-repeat="month in datepickerCtrl.datepicker.getShowedMonths()")
+      div.calendar-month
+        i.calendar-btn(ng-class="datepickerCtrl.getArrrowClass($index)"
+          ng-click="datepickerCtrl.update($index)")
+        span.month-value() {{ datepickerCtrl.getTitle(month) }}
+      div.calendar-day
+        span.day-value(ng-repeat="day in datepickerCtrl.days") {{ day.name }}
+      div.calendar-num
+        span.num-value(ng-repeat="day in month.days" ng-class="datepickerCtrl.getDayClass(day)"
+          ng-click="datepickerCtrl.setDate(month, day)") {{ day.name }}

@@ -1,0 +1,10 @@
+mixin spacer(val)
+
+  // SPACER START
+  td(style="width: #{val}px;height:#{val}px;" width="#{val}" height="#{val}" bgcolor="transparent")
+    table(style="width: #{val}px;height:#{val}px;" width="#{val}" height="#{val}" bgcolor="transparent" border="0" cellpadding="0" cellspacing="0")
+      tr
+        td(style="width: #{val}px;height:#{val}px; font-size: 1px;" width="#{val}" height="#{val}" bgcolor="transparent" border="0" cellpadding="0" cellspacing="0")
+          | &nbsp;
+
+  // SPACER END

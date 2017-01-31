@@ -1,0 +1,63 @@
+.header-menu .menu-list .list-item
+  .item-link
+    position: relative
+    display: block
+    padding-left: 40px
+    color: $t-medium-gray
+    text-transform: uppercase
+    +roboto-regular
+
+    &:hover
+      color: #666
+
+    &.is-active
+      color: $t-blue
+      .link-text
+        &:after
+          content: ""
+
+    .link-text
+      position: relative
+      display: block
+      padding: 29px 0 26px 0
+      font-size: em(11)
+
+      &:after
+        position: absolute
+        left: 0
+        bottom: -1px
+        width: 100%
+        height: 3px
+        background-color: $t-blue
+
+.as-sortable-item
+  .item-link
+    position: relative
+    display: block
+    padding-left: 40px
+    color: $t-medium-gray
+    text-transform: uppercase
+    +roboto-regular
+
+    &:hover
+      color: #666
+
+    &.is-active
+      color: $t-blue
+      .link-text
+        &:after
+          content: ""
+
+    .link-text
+      position: relative
+      display: block
+      padding: 29px 0 26px 0
+      font-size: em(11)
+
+      &:after
+        position: absolute
+        left: 0
+        bottom: -1px
+        width: 100%
+        height: 3px
+        background-color: $t-blue

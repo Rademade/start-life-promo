@@ -1,0 +1,17 @@
+div.form-multiselect(ng-class="{ 'is-current' : hotelTypeCtrl.service.getIsOpen() }"
+  on-body-click on-body-click-cb="hotelTypeCtrl.service.close()" click-preventer)
+
+  span.error-msg Please set the return date
+
+  div.multiselect-value(ng-click="hotelTypeCtrl.toggle()")
+    span.value() {{ hotelTypeCtrl.getSelectTitle() }}
+  div.multiselect-dd-holder
+    div.multiselect-dd
+      div.dd-scale-list-holder(ng-repeat="item in hotelTypeCtrl.service.getHotelParams()")
+        div.dd-scale-list
+          div.list-item
+            span.item-title() {{ item.name }}
+            div.item-scale
+              i.scale-btn.mod-prev(ng-click="hotelTypeCtrl.service.decrementCount(item.name)")
+              span.scale-value() {{ item.count }}
+              i.scale-btn.mod-next(ng-click="hotelTypeCtrl.service.incrementCount(item.name)")

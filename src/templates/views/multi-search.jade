@@ -1,0 +1,14 @@
+nav.content-nav(nav-search ng-if="$state.includes('public.multi-search')")
+div.h-h100p(ui-view="")
+
+
+// Remove ng-hide for show popup
+div.popup-wrapper.mod-msearch.ng-hide
+  div.popup-holder
+    div.popup
+      img.popup-img(src="../images/popup-dev.svg" alt="popup-img")
+      p.popup-title In development
+      p.popup-description
+        | Thanks for creating an Royal Start account.
+        | You've just made it easier to keep track of all your
+        | trip details and shop for the best Expedia travel deals.

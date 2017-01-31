@@ -1,0 +1,20 @@
+h1.index-title() {{ searchCtrl.tabService.getCurrentTab().name }}
+div.search
+  form.search-input-holder
+    .form-selector(on-body-click on-body-click-cb="searchCtrl.resetIcons()" condition="true")
+      angucomplete-alt(placeholder="Search" pause="600" local-data="searchCtrl.results"
+        selected-object="searchCtrl.selectedResult" search-fields="text" title-field="text"
+        minlength="1" input-class="form-control" match-class="highlight" template-url="search/partials/block"
+        ng-keyup="searchCtrl.enter($event)" clear-selected='true'
+        local-search="searchCtrl.localSearch")
+
+div.tabs.mod-index(ng-class="{ 'is-views' : searchCtrl.tabService.allTabsShowed() }")
+  div.tabs-data
+  ul.tabs-list(ng-sortable="searchCtrl.config")
+    li.list-item(ng-repeat="tab in searchCtrl.tabService.getTabs()"
+      ng-class="{ 'is-active' : tab.active }")
+      span.item-text(ng-click="searchCtrl.setCurrentTab(tab)" ng-dblclick="searchCtrl.openInTab(tab.domain)") {{ tab.name }}
+
+  div.tabs-settings
+    i.settings-item.mod-views(ng-click="searchCtrl.tabService.toggleTabs()"
+      ng-class="{'is-active' : searchCtrl.tabService.allTabsShowed() }")

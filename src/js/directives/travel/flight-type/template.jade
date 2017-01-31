@@ -1,0 +1,25 @@
+div.form-multiselect(ng-class="flightTypeCtrl.getClass()"
+  on-body-click on-body-click-cb="flightTypeCtrl.service.close()" click-preventer)
+
+  span.error-msg Please set the return date
+
+  div.multiselect-value(ng-click="flightTypeCtrl.toggle()")
+    span.value() {{ flightTypeCtrl.getSelectTitle() }}
+  div.multiselect-dd-holder
+    div.multiselect-dd
+      div.dd-scale-list-holder
+        div.dd-scale-list
+          div.list-item(ng-repeat="type in flightTypeCtrl.service.getFlightTypes()")
+            span.item-title() {{ type.name }}
+            div.item-scale
+              i.scale-btn.mod-prev(ng-click="flightTypeCtrl.decrementCount(type)")
+              span.scale-value() {{ type.count }}
+              i.scale-btn.mod-next(ng-click="flightTypeCtrl.incrementCount(type)")
+            span.item-description() {{ type.ageRange }}
+      div.dd-radio-list(ng-if="flightTypeCtrl.showClasses")
+        span.list-title Class
+        div.radio-holder
+          label.input-radio-item(ng-repeat="item in flightTypeCtrl.service.getFlightClasses()")
+            input.form-radio(type="radio" name="abc" ng-checked="item.active"
+              ng-click="flightTypeCtrl.setFlightClass(item.name)")
+            span.form-radio-label() {{ item.name }}

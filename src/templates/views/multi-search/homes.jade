@@ -1,0 +1,60 @@
+div.content-tabs
+  div.tabs.mod-content
+    div.tabs-data
+      ul.tabs-list
+        li.list-item.is-active
+          span.item-text Real estate
+
+div.content-data.mod-tabs
+  div.data-holder
+    div.form.mod-p20
+      div.form-field
+        label.input-radio-item(ng-repeat="type in homeSearchCtrl.factory.getTypes()")
+          input.form-radio(type="radio" name="abc" ng-checked="type.active")
+          span.form-radio-label(ng-click="homeSearchCtrl.factory.setType(type.name)") {{ type.name }}
+
+      div.form-field
+        div.inputs-list
+          div.input-holder.mod-msearch(direction-hotel)
+          //div.input-holder.mod-msearch(location
+            ng-class="{ 'is-error' : homeSearchCtrl.factory.hasLocationError() }"
+            service="homeSearchCtrl.selectors.location"
+            provider="realtor"
+            placeholder="City or ZIP code")
+
+          div.form-selector.mod-msearch(
+            simple-select
+            selector="homeSearchCtrl.selectors.propertyType"
+            placeholder="Property type" placeholder-dynamic="true")
+
+        div.inputs-list
+          div.form-selector.mod-msearch(custom-select
+            selector="homeSearchCtrl.selectors.minPrice"
+            placeholder="Price (min)" input-placeholder="'Enter your price'")
+
+          div.form-selector.mod-msearch(custom-select
+            ng-class="{'is-error' : homeSearchCtrl.factory.hasPriceError() }"
+            error-message="'Max price must be more then min price'"
+            selector="homeSearchCtrl.selectors.maxPrice"
+            placeholder="Price (max)" input-placeholder="'Enter your price'")
+
+        div.inputs-list
+          div.form-selector.mod-msearch(simple-select selector="homeSearchCtrl.selectors.beds"
+            placeholder="Beds" placeholder-dynamic="true")
+          div.form-selector.mod-msearch(simple-select selector="homeSearchCtrl.selectors.baths"
+            placeholder="Baths" placeholder-dynamic="true")
+
+      //div.form-field
+        div.inputs-list
+          div.form-nav-btn
+            span.btn-text(ng-click="homeSearchCtrl.toggleAdvancedSearch()") Advanced search
+
+      div(home-advanced-search ng-show="homeSearchCtrl.isAdvancedSearchShowed"
+        selectors="homeSearchCtrl.selectors")
+
+      div.filter-list
+        div.filter-item(
+          ng-repeat="site in homeSearchCtrl.factory.getSites()"
+          ng-click="homeSearchCtrl.open(site.name)"
+          ng-dblclick="homeSearchCtrl.openLink(site.name)")
+          span.item-title {{ site.name }}

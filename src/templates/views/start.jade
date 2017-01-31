@@ -1,0 +1,54 @@
+div.promo
+
+  div.promo-play(ng-click="promoPageCtrl.showVideo()")
+    span.play-text() {{ promoPageCtrl.timerText() }}
+
+  ul.promo-list
+    span.promo-item.mod-26.mod-pink.mod-opacity-3(style="top: -60%;left: 70%") New York Times
+    span.promo-item.mod-26.mod-pink.mod-opacity-5(style="top: -50%;left: 32%") Cars
+    span.promo-item.mod-36.mod-light-blue(style="top: -40%;left: 40%") Amazon
+    span.promo-item.mod-43.mod-blue(style="top: -30%;right: 47%") YouTube
+    span.promo-item.mod-26.mod-blue.mod-opacity-6(style="top: -22%;left: 58%") Twitter
+    span.promo-item.mod-19.mod-exlight-blue.mod-opacity-5(style="top: -19%;left: 118%") СNN
+    span.promo-item.mod-33.mod-blue.mod-opacity-7(style="top: -7%;right: 95%") Tripadvisor
+    span.promo-item.mod-20.mod-light-pink.mod-opacity-5(style="top: 10%;right: 105%") Raaltor
+    span.promo-item.mod-43.mod-blue(style="top: -6%;left: 98%") Ebay
+    span.promo-item.mod-26.mod-pink(style="top: 2%;left: 143%") Instagram
+    span.promo-item.mod-83.mod-blue(style="top: 22%;right: 115%") Start
+    span.promo-item.mod-43.mod-dark-pink.mod-opacity-6(style="top: 24%;left: 108%") Yahoo
+    span.promo-item.mod-33.mod-blue.mod-opacity-6(style="top: 42%;left: 108%") Forbes
+    span.promo-item.mod-16.mod-exlight-blue.mod-opacity-7(style="top: 62%;left: 110%") Kayak
+    span.promo-item.mod-20.mod-light-pink(style="top: 65%;left: 144%") Booking.com
+    span.promo-item.mod-20.mod-exlight-blue(style="top: 77%;right: 105%") Aliexpress
+    span.promo-item.mod-33.mod-blue.mod-opacity-8(style="top: 72%;left: 105%") Facebook
+    span.promo-item.mod-20.mod-exlight-blue(style="top: 90%;right: 160%") Priceline
+    span.promo-item.mod-36.mod-blue.mod-opacity-9(style="top: 83%;right: 88%") Wikipedia
+    span.promo-item.mod-20.mod-light-pink.mod-opacity-4(style="top: 103%;right: 140%") ESPN
+    span.promo-item.mod-20.mod-exlight-blue(style="top: 97%;left: 90%") Zillow
+    span.promo-item.mod-36.mod-blue.mod-opacity-6(style="top: 100%;right: 36%") Craigslist
+    span.promo-item.mod-36.mod-blue(style="top: 100%;left: 78%") Google
+    span.promo-item.mod-26.mod-pink.mod-opacity-6(style="top: 117%;right: 78%") Maps
+    span.promo-item.mod-26.mod-light-pink(style="top: 117%;left: 67%") BBC.com
+    span.promo-item.mod-36.mod-blue(style="top: 133%;left: 23%") Expedia
+    span.promo-item.mod-26.mod-pink.mod-opacity-6(style="top: 133%;left: 126%") IMDB
+    span.promo-item.mod-20.mod-exlight-blue.mod-opacity-7(style="top: 150%;right: 79%") Bing
+    span.promo-item.mod-20.mod-pink(style="top: 150%;left: 60%") Airbnb
+
+div.btn-box.align-center.promo-btn-list
+  a.promo-btn.btn.mod-red.mod-ico.mod-plus.mod-large(href="#" ng-show="promoPageCtrl.isChoromeAvailable()"
+    ng-click="promoPageCtrl.addExtension()") Add to Chrome
+  //a.promo-btn.btn.mod-red(href="#" ng-show="!promoPageCtrl.isChoromeAvailable()"
+  //  ng-click="promoPageCtrl.downloadChrome()") Download Chrome
+  //a.promo-btn.btn.mod-gray(href="#") We are on Indiegogo
+
+div.promo-video(ng-class="{ 'ng-hide' : !promoPageCtrl.isVideoShowed }")
+  div.video-box
+    div.video-holder
+      div.video-data
+        i.video-close(ng-click="promoPageCtrl.hideVideo()")
+        youtube-video.youtube-video(
+          id="promoVideo"
+          video-id="promoPageCtrl.videoId"
+          player-width="'855px'"
+          player-height="'515px'"
+        )

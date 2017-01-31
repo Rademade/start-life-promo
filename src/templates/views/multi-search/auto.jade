@@ -1,0 +1,32 @@
+div.content-tabs
+  div.tabs.mod-content
+    div.tabs-data
+      ul.tabs-list
+        li.list-item.is-active
+          span.item-text Cars
+
+div.content-data.mod-tabs
+  div.data-holder
+    div.form.mod-p20(ng-if="autoSearchCtrl.factory.getCars().length > 0")
+      div.form-field
+        div.inputs-list
+          label.input-radio-item(ng-repeat="type in autoSearchCtrl.factory.getTypes()")
+            input.form-radio(type="radio" name="abc" ng-checked="type.active")
+            span.form-radio-label(
+              ng-click="autoSearchCtrl.factory.selectType(type.name)") {{ type.name }}
+
+      div.form-field(auto-base-search factory="autoSearchCtrl.factory")
+
+      //div.form-field
+        div.inputs-list
+          div.form-nav-btn
+            span.btn-text(ng-click="autoSearchCtrl.toggleAdvancedSearch()") Advanced search
+
+        div(auto-advanced-search ng-show="autoSearchCtrl.isAdvancedSearchShowed"
+          factory="autoSearchCtrl.factory")
+
+      div.filter-list
+        div.filter-item(ng-repeat="site in autoSearchCtrl.factory.getSites()"
+          ng-click="autoSearchCtrl.open(site.name)"
+          ng-dblclick="autoSearchCtrl.openLink(site.name)")
+          span.item-title() {{ site.name }}

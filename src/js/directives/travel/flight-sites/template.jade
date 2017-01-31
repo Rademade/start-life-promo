@@ -1,0 +1,5 @@
+div.filter-item(
+  ng-repeat="site in flightSitesCtrl.sites"
+  ng-click="flightSitesCtrl.open(site)"
+  ng-dblclick="flightSitesCtrl.openLink(site)")
+  span.item-title {{ site.name }}

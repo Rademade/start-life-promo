@@ -1,0 +1,17 @@
+div.content-tabs(ng-class="{ 'is-searching' : false }")
+  //has class .is-views which show all rows of rubrics
+  div.tabs.mod-content(ng-class="{ 'is-views' : newsCategoriesCtrl.showAllCategories }")
+    div.tabs-data
+      ul.tabs-list(ng-sortable="newsCategoriesCtrl.config")
+        li.list-item(ng-repeat="category in newsCategoriesCtrl.newsService.getCategories()"
+          ng-class="{ 'is-active' : category.active }" data-category-item="")
+          span.item-text(ng-click="newsCategoriesCtrl.newsService.setCurrentCategory(category); newsCategoriesCtrl.newsService.setCategory(category); newsCategoriesCtrl.turnOffCategoriesArrow()"
+            ng-dblclick="newsCategoriesCtrl.open(category.link)") {{ category.name }}
+
+      div.tabs-settings
+        //has class .is-active which rotate icon on 180deg
+        i.settings-item.mod-views(ng-class="{ 'is-active' : newsCategoriesCtrl.categoriesArrowUp }"
+        ng-click = "newsCategoriesCtrl.allCategories()"
+        ng-hide = "!newsCategoriesCtrl.isArrowVisible()")
+
+  div.search.ng-hide(search)

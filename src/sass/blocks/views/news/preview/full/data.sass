@@ -1,0 +1,38 @@
+.news-preview .preview-item.mod-full
+
+  .item-data
+    position: relative
+    padding: 0 0 0 262px
+    border-bottom: none
+    box-sizing: border-box
+    +clear
+
+    &:hover
+
+      .data-title
+        color: $t-blue
+
+    .data-title
+      cursor: pointer
+      display: block
+      margin-bottom: 20px
+      margin-top: -5px
+      color: $t-black
+      font-size: em(21)
+      line-height: 24px
+      +roboto-regular
+
+    .data-description
+      display: block
+      margin: 0
+      color: $t-silver
+      font-size: em(13)
+      line-height: 20px
+      display: -webkit-box
+      overflow: hidden
+      text-overflow: ellipsis
+      white-space: normal
+      word-wrap: break-word
+      -webkit-box-orient: vertical
+      -webkit-line-clamp: 5
+      +arial

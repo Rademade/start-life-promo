@@ -1,0 +1,29 @@
+div.form-field
+  div.inputs-list
+    div.input-holder.mod-msearch(direction-hotel
+      ng-class="{'is-error' : hotelsCtrl.isCityError(hotelsCtrl.factory.city)}"
+      on-selected-cb="hotelsCtrl.setCity(data)")
+
+    div.input-holder.mod-msearch
+      div.form-datepicker(datepicker
+        service="hotelsCtrl.factory.dateFrom"
+        ng-class="hotelsCtrl.getDatepickerClass(hotelsCtrl.factory.dateFrom)"
+        on-select-cb="hotelsCtrl.factory.onDateFromSelected()"
+        on-toggle-cb="hotelsCtrl.factory.closeAllDatepickersExcept(datepicker)"
+        placeholder="Check-in"
+        focus="hotelsCtrl.focusFrom")
+
+      div.form-datepicker(datepicker
+        service="hotelsCtrl.factory.dateTo"
+        ng-class="hotelsCtrl.getDateToDatepickerCss()"
+        on-select-cb="hotelsCtrl.factory.onDateToSelected()"
+        on-toggle-cb="hotelsCtrl.factory.closeAllDatepickersExcept(datepicker)"
+        placeholder="Check-out")
+
+  div.inputs-list(hotel-type service="hotelsCtrl.factory")
+
+div.filter-list
+  div.filter-item(ng-repeat="site in hotelsCtrl.factory.getSites()"
+    ng-click="hotelsCtrl.open(site.name)"
+    ng-dblclick="hotelsCtrl.openSite(site.name)")
+    span.item-title() {{ site.name }}

@@ -1,0 +1,14 @@
+angucomplete-alt(
+  placeholder="{{ locationCtrl.placeholder }}"
+  pause="600"
+  local-data="locationCtrl.data"
+  selected-object="locationCtrl.onSelected"
+  search-fields="city"
+  title-field="city"
+  minlength="1"
+  input-class="form-input"
+  match-class="highlight"
+  ng-keyup="locationCtrl.enter($event)"
+  template-url="home/location/partials/block"
+  ng-init="locationCtrl.updateFocus()")
+span.error-msg(ng-if="errorMessage") {{ errorMessage }}

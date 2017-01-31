@@ -1,0 +1,25 @@
+.form-datepicker
+  position: relative
+  float: left
+  width: 120px
+  margin-right: 10px
+
+  .datepicker-dd-holder
+    display: none
+
+  &.is-current
+    z-index: 12
+    .datepicker-value
+      border: 1px solid $b-blue
+    .datepicker-dd-holder
+      display: block
+
+  &.is-disabled
+    cursor: default
+    pointer-events: none
+    .datepicker-value
+      background: #f7f7f7
+
+
+  &:nth-child(2n)
+    margin-right: 0

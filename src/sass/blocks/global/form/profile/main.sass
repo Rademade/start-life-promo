@@ -1,0 +1,29 @@
+.form
+  &.mod-profile
+    +clear
+
+    .form-data
+      +clear
+
+    .form-box
+      float: left
+      margin-bottom: 20px
+      width: 50%
+      max-width: 385px
+      padding-right: 30px
+      box-sizing: border-box
+      +media-below($media-desktop)
+        width: 100%
+
+      &:nth-child(2n)
+        padding-right: 0
+        padding-left: 30px
+
+      &:last-child
+        margin-bottom: 0
+
+    .form-btn-list
+      margin: 0 -5px
+      .btn-box
+        padding: 0 5px
+        box-sizing: border-box

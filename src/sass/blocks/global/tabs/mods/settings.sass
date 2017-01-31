@@ -1,0 +1,34 @@
+.tabs
+  &.mod-nosettings
+    .tabs-settings
+      display: none
+
+  &.mod-search
+    overflow: inherit
+    .settings-item
+      &.mod-edit
+        display: none
+
+    .tabs-settings
+      vertical-align: middle
+    .settings-item
+      &.mod-search
+        display: inline-block
+        width: 33px
+        height: 32px
+        border: 1px solid transparent
+        transition: background .3s ease, border .3s ease
+        box-sizing: border-box
+
+        .item-tooltip-holder
+          opacity: 0
+          visibility: hidden
+
+        &:hover
+          border: 1px solid $b-gray
+          background: #FFFFFF
+
+          .item-tooltip-holder
+            opacity: 1
+            visibility: visible
+

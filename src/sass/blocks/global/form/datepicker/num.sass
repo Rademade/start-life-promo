@@ -1,0 +1,44 @@
+.form-datepicker .datepicker-calendar
+  .calendar-num
+    width: 100%
+    +clear
+    
+    .num-value
+      cursor: pointer
+      display: inline-block
+      float: left
+      width: $w100/7
+      height: 36px
+      padding: 8px 0
+      font-size: em(14)
+      color: $t-gray
+      text-align: center
+      border: 1px solid $b-exlight-gray
+      border-bottom: none
+      border-left: none
+      transition: color .3s ease, background .3s ease
+      box-sizing: border-box
+      +roboto-regular
+
+      &.is-disabled
+        cursor: default
+        background: $bg-blue
+        color: $t-light-silver
+        pointer-events: none
+
+      &.is-active
+        color: $white
+        background: $bg-extra-blue
+
+      &.is-during
+        background: $bg-light-blue
+
+      &:hover
+        color: $white
+        background: $bg-extra-blue
+
+  &:nth-child(2n)
+    .calendar-num
+      .num-value
+        border-left: 1px solid $b-exlight-gray
+        border-right: none
