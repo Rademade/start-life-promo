@@ -8,8 +8,6 @@ BUILD_CONFIG = {
 
 set :deploy_to, '/home/start-life/website-frontend'
 
-set :branch, :master
-
 server 'start-life.rademade.com', user: 'start-life', roles: %w{web app}
 
 set :repo_url, 'git@github.com-frontend:Rademade/start-life-frontend.git'

@@ -1,17 +1,9 @@
-lock '3.4.0'
-
-set :application, 'StartLifeFrontend'
-
-set :scm, :git
-
 set :rvm_type,          :system
 set :rvm_ruby_version,  'ruby-2.3.0@start-life'
 
 set :linked_dirs, %w{bower_components node_modules}
-set :keep_releases, 2
 
 namespace :deploy do
-
   task 'npm:install' do
     on roles(:web) do
       within release_path do
@@ -40,5 +32,4 @@ namespace :deploy do
   after :updated, 'deploy:bower:install'
   after :updated, 'deploy:gulp:install'
   after :finishing, 'deploy:cleanup'
-
 end
