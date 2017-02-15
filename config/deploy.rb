@@ -29,5 +29,4 @@ namespace :deploy do
   after :updated, 'deploy:npm:install'
   after :updated, 'deploy:bower:install'
   after :updated, 'deploy:gulp:install'
-  after :finishing, 'deploy:cleanup'
 end
