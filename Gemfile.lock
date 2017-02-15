@@ -28,6 +28,9 @@ PLATFORMS
 
 DEPENDENCIES
   capistrano (~> 3.2)
-  capistrano-bundler
-  capistrano-rvm
+  capistrano-bundler (~> 1.1)
+  capistrano-rvm (~> 0.1.2)
   sass
+
+BUNDLED WITH
+   1.14.3
