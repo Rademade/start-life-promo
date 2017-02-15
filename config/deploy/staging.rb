@@ -6,8 +6,9 @@ BUILD_CONFIG = {
     socialPrefix: 'http://start-life.rademade.com/'
 }
 
-set :deploy_to, '/home/start-life/website-frontend'
-
 server 'start-life.rademade.com', user: 'start-life', roles: %w{web app}
 
 set :repo_url, 'git@github.com-frontend:Rademade/start-life-frontend.git'
+
+set :rvm_type,          :system
+set :rvm_ruby_version,  'ruby-2.3.0@start-life'

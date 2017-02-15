@@ -1,6 +1,4 @@
-set :rvm_type,          :system
-set :rvm_ruby_version,  'ruby-2.3.0@start-life'
-
+set :deploy_to, '/home/start-life/website-frontend'
 set :linked_dirs, %w{bower_components node_modules}
 
 namespace :deploy do
