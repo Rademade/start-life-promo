@@ -31,7 +31,10 @@
     "lodash": "^2.4.1",
     "q": "^1.1.2",
     "stream-series": "^0.1.1",
-    "through2": "^2.0.0"
+    "through2": "^2.0.0",
+    "gulp-svgmin": "^1.2.2",
+    "gulp.spritesmith": "^6.2.1",
+    "node-normalize-scss": "^1.3.1"
   },
   "scripts": {
     "install": "",
@@ -41,11 +44,6 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/Rademade/aldim-frontend.git"
-  },
-  "devDependencies": {
-    "gulp-svgmin": "^1.2.2",
-    "gulp.spritesmith": "^6.2.1",
-    "node-normalize-scss": "^1.3.1"
   },
   "author": "Vladislav Melyanitskiy <co@rademade.com>",
   "license": "MIT"

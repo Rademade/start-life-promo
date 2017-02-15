@@ -1,15 +1,18 @@
-BUILD_CONFIG = {
-    domain: 'start-life.rademade.com',
-    apiPrefix: 'http://start-life.rademade.com/api',
-    publicPrefix: 'http://start-life.rademade.com/public',
-    imagePrefix: 'http://start-life.rademade.com',
-    socialPrefix: 'http://start-life.rademade.com/'
-}
+require 'json'
 
-set :deploy_to, '/home/start-life/website-frontend'
+ruby_version = File.read(File.join __dir__, '../../.ruby-version').chomp
+set :rvm_ruby_version, ruby_version
 
-set :branch, :master
+set :default_env, fetch(:default_env).merge({
+  BUILD_CONFIG: {
+      domain: 'start.live',
+      apiPrefix: 'http://start.live/api',
+      publicPrefix: 'http://start.live/public',
+      imagePrefix: 'http://start.live',
+      socialPrefix: 'http://start.live/'
+  }.to_json
+})
 
-server 'start-life.rademade.com', user: 'start-life', roles: %w{web app}
+server 'vm.rademade.com:2234', user: 'start-life', roles: %w{web app}
 
-set :repo_url, 'git@github.com-frontend:Rademade/start-life-frontend.git'
+set :repo_url, 'git@github.com:Rademade/start-life-promo.git'
