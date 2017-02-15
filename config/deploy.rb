@@ -5,14 +5,6 @@ set :gulp_tasks, 'build:production'
 namespace :deploy do
   before :updated, 'gulp'
 
-  after :updated, 'npm:install' do
-    on roles(:web) do
-      within release_path do
-        execute :npm, :install
-      end
-    end
-  end
-
   after :updated, 'bower:install' do
     on roles(:web) do
       within release_path do
